@@ -1,0 +1,1 @@
+# smartclide-architectural-pattern
