@@ -6,7 +6,7 @@ public enum ArchitecturalPatterns {
 	MICROKERNEL("Microkernel Architectural Pattern"), 
 	MICROSERVICES("Microservices Architectural Pattern"), 
 	SERVICE_ORIENTED("Service-oriented Architectural Pattern"), 
-	SPACED_BASED("Space-based Architectural Pattern");
+	SPACE_BASED("Space-based Architectural Pattern");
 	
 	private String name;
 	

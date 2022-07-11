@@ -12,6 +12,7 @@ import eu.smartclide.architecturalpatterns.supportedpatterns.ArchitecturalPatter
 import com.fasterxml.jackson.core.type.TypeReference;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.ListIterator;
 import java.util.EnumMap;
 import java.util.List;
@@ -35,7 +36,9 @@ public class PatternSelectionController {
 		patternValues.put(ArchitecturalPatterns.MICROKERNEL, 0);
 		patternValues.put(ArchitecturalPatterns.MICROSERVICES, 0);
 		patternValues.put(ArchitecturalPatterns.SERVICE_ORIENTED, 0);
-		patternValues.put(ArchitecturalPatterns.SPACED_BASED, 0);
+		patternValues.put(ArchitecturalPatterns.SPACE_BASED, 0);
+		
+		List<ArchitecturalPatterns> patternList = Arrays.asList(ArchitecturalPatterns.values());
 		
 		ObjectMapper mapper = new ObjectMapper();
 	
@@ -45,16 +48,13 @@ public class PatternSelectionController {
 		
 		Path filePath = Path.of(EVALUATION_JSON_FILE_PATH);
 		
-		//JsonNode inputJson = null;
 		JsonNode valuesJsonNode = null;
-	
-		try {
+
+		try {	
 			
 			if (input == null) {
 				throw new NullPointerException("Survey input is empty.");
 			} else {
-				//JsonNode inputJson = mapper.readTree(input);
-			
 				//Get survey question IDs from into string list
 				List<String> ids = mapper.readValue(input, new TypeReference<List<String>>(){});
 				
@@ -62,19 +62,16 @@ public class PatternSelectionController {
 				JsonNode jsonNode = mapper.readValue(jsonStr, JsonNode.class);			
 				
 				//Iterate over survey question IDs
-				ListIterator<String> itr = ids.listIterator();
-			
+				ListIterator<String> itr = ids.listIterator();			    			    
 				while (itr.hasNext()) {		
 					String next = itr.next();
-				    valuesJsonNode = jsonNode.get(next).get(0);	
-				    	/*FIXME
-						//Loop through the evaluation values for current id
-						for (ArchitecturalPatterns pattern : ArchitecturalPatterns.values()) {
-							int currentValue = patternValues.get(pattern);
-							int newValue = currentValue + valuesJsonNode.get(pattern.toString()).asInt();
-							patternValues.put(pattern, newValue);						
-						}
-						*/
+					valuesJsonNode = jsonNode.get(next).get(0);	
+			    
+					for (ArchitecturalPatterns pattern : patternList) {							
+						int currentValue = patternValues.get(pattern);
+					    int newValue = currentValue + valuesJsonNode.get(pattern.name()).asInt();
+						patternValues.put(pattern, newValue);
+					}		
 				}
 			}
 		 } catch (IOException e) {
@@ -82,12 +79,5 @@ public class PatternSelectionController {
 			 }
 
 		return patternValues.toString();
-		/*
-		return valuesJsonNode.toString() + 
-				"\n" + valuesJsonNode.get(ArchitecturalPatterns.LAYERED.toString()) + 
-				"\n" + patternValues.get(ArchitecturalPatterns.LAYERED).toString();
-		*/
-	}
-	
-		
+	}	
 }
