@@ -1,14 +1,12 @@
-package eu.smartclide.architecturalpatterns.selection;
+package org.eclipse.opensmartclide.architecturalpatterns.selection;
 
+import org.eclipse.opensmartclide.architecturalpatterns.supportedpatterns.ArchitecturalPatterns;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import eu.smartclide.architecturalpatterns.supportedpatterns.ArchitecturalPatterns;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 
 import java.util.ArrayList;
@@ -27,7 +25,7 @@ public class PatternSelectionController {
 	
 	EnumMap<ArchitecturalPatterns, Integer> patternValues = new EnumMap<>(ArchitecturalPatterns.class);
 	
-	@PostMapping("/evaluate")
+	@PostMapping("/evaluation")
 	public String evaluateSurveyInput(@RequestBody String input){
 
 		//Initialize 

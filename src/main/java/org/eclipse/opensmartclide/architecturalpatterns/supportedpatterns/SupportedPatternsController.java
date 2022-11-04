@@ -1,4 +1,4 @@
-package eu.smartclide.architecturalpatterns.supportedpatterns;
+package org.eclipse.opensmartclide.architecturalpatterns.supportedpatterns;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

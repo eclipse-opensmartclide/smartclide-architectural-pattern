@@ -1,4 +1,4 @@
-package eu.smartclide.architecturalpatterns;
+package org.eclipse.opensmartclide.architecturalpatterns;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
