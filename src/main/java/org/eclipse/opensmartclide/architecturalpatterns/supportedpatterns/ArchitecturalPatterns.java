@@ -1,4 +1,4 @@
-package eu.smartclide.architecturalpatterns.supportedpatterns;
+package org.eclipse.opensmartclide.architecturalpatterns.supportedpatterns;
 
 public enum ArchitecturalPatterns {
 	EVENT_DRIVEN("Event-driven Architectural Pattern"), 

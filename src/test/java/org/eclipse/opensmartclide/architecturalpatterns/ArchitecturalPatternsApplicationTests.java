@@ -1,4 +1,4 @@
-package eu.smartclide.architecturalpatterns;
+package org.eclipse.opensmartclide.architecturalpatterns;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -8,7 +8,7 @@
 		<version>2.7.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>eu.smartclide</groupId>
+	<groupId>org.eclipse.opensmartclide</groupId>
 	<artifactId>architectural-patterns</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>architectural-patterns</name>
