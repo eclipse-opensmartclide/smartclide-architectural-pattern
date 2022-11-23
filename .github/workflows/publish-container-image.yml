@@ -12,11 +12,6 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    env:
-      CONTAINER_REGISTRY_USERNAME: ${GITHUB_ACTOR}
-      CONTAINER_REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      SMARTCLIDE_CONTEXT_GITLAB_API_TOKEN: ${{ secrets.GITLAB_DEV_SMARTCLIDE_EU_API_TOKEN }}
-
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -34,9 +29,6 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('./**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: Build necessary modules
-        run: mvn install -pl context-monitoring -am
-
       - name: Get short commit SHA
         if: ${{ github.event_name == 'push' }}
         id: get_short_commit_SHA
@@ -46,7 +38,7 @@ jobs:
         if: ${{ github.event_name == 'push' }}
         env:
           IMAGE_TAG: ${{ steps.get_short_commit_SHA.outputs.sha8}}
-        run: mvn test jib:build -pl smartclide-monitoring -Djib.to.auth.username="${CONTAINER_REGISTRY_USERNAME}" -Djib.to.auth.password="${CONTAINER_REGISTRY_TOKEN}" -Djib.to.tags="${IMAGE_TAG}"
+        run: mvn test jib:build -Djib.to.tags="${IMAGE_TAG}"
 
       # below code triggers only for release events
 
@@ -59,4 +51,4 @@ jobs:
         if: ${{ github.event_name == 'release' }}
         env:
           IMAGE_TAG: ${{ steps.get_tag_name.outputs.TAG_NAME }}
-        run: mvn test jib:build -pl smartclide-monitoring -Djib.to.auth.username="${CONTAINER_REGISTRY_USERNAME}" -Djib.to.auth.password="${CONTAINER_REGISTRY_TOKEN}" -Djib.to.tags="${IMAGE_TAG}"
+        run: mvn test jib:build -Djib.to.tags="${IMAGE_TAG}"
