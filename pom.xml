@@ -11,10 +11,11 @@
 	<groupId>org.eclipse.opensmartclide</groupId>
 	<artifactId>architectural-patterns</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>architectural-patterns</name>
-	<description>Demo project for Spring Boot</description>
+	<name>Eclipse OpenSmartCLIDE Architectural Patterns</name>
+
 	<properties>
 		<java.version>11</java.version>
+		<jib-maven-plugin.version>3.3.1</jib-maven-plugin.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -56,7 +57,32 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>${jib-maven-plugin.version}</version>
+				<configuration>
+				    <from>
+					<image>eclipse-temurin:11-jre-jammy</image>
+				    </from>
+				    <to>
+					<image>ghcr.io/eclipse-opensmartclide/smartclide/${project.artifactId}:latest</image>
+				    </to>
+				    <container>
+					<ports>
+					    <port>8080</port>
+					</ports>
+					<entrypoint>
+					    <arg>java</arg>
+					    <arg>-Djava.security.egd=file:/dev/./urandom</arg>
+					    <arg>-cp</arg>
+					    <arg>app/libs/*:app/resources:app/classes</arg>
+					    <arg>org.eclipse.opensmartclide.architecturalpatterns.ArchitecturalPatternsApplication</arg>
+					</entrypoint>
+				    </container>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
-
 </project>
