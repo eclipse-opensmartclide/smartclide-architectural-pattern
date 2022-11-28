@@ -64,19 +64,11 @@
 				<version>${jib-maven-plugin.version}</version>
 				<configuration>
 				    <from>
-					<image>openjdk:11.0.10-jre-slim-buster</image>
+					<image>eclipse-temurin:11-jre-jammy</image>
 				    </from>
 				    <to>
 					<image>ghcr.io/eclipse-opensmartclide/smartclide/${project.artifactId}:latest</image>
 				    </to>
-				    <extraDirectories>
-					<permissions>
-					    <permission>
-						<file>/entrypoint.d/wait-for-it.sh</file>
-						<mode>755</mode>
-					    </permission>
-					</permissions>
-				    </extraDirectories>
 				    <container>
 					<ports>
 					    <port>8080</port>
