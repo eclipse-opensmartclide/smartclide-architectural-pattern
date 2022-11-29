@@ -1,0 +1,254 @@
+{
+   "Type":"ContentPage",
+   "Title":"Architectural Pattern Selection",
+   "Elements":[
+      {
+         "Id":"Q1",
+         "Type":"ChooseOne",
+         "Body":"Please choose the domain of your application.",
+         "Layout":"list",
+         "Choices":[
+            {
+               "Label":"Web-based systems",
+               "Id":"Q1_1"
+            },
+            {
+               "Label":"Web services",
+               "Id":"Q1_2"
+            },
+            {
+               "Label":"Service-based systems",
+               "Id":"Q1_3"
+            },
+            {
+               "Label":"Distributed systems",
+               "Id":"Q1_4"
+            },
+            {
+               "Label":"Cloud computing applications",
+               "Id":"Q1_5"
+            },
+            {
+               "Label":"Mobile applications",
+               "Id":"Q1_6"
+            },
+            {
+               "Label":"Compiler design",
+               "Id":"Q1_7"
+            },
+            {
+               "Label":"Case and related developer tools",
+               "Id":"Q1_8"
+            },
+            {
+               "Label":"Database systems",
+               "Id":"Q1_9"
+            },
+            {
+               "Label":"Context-aware systems",
+               "Id":"Q1_10"
+            },
+            {
+               "Label":"Adaptable systems",
+               "Id":"Q1_11"
+            },
+            {
+               "Label":"Enterprise application integration",
+               "Id":"Q1_12"
+            },
+            {
+               "Label":"Customer relationship management",
+               "Id":"Q1_13"
+            },
+            {
+               "Label":"Information management and decision support system",
+               "Id":"Q1_14"
+            },
+            {
+               "Label":"Transaction processing",
+               "Id":"Q1_15"
+            },
+            {
+               "Label":"None of the above",
+               "Id":"Q1_16"
+            }
+         ]
+      },
+      {
+         "Id":"Q2",
+         "Type":"ChooseMany",
+         "Body":"Please choose the type of your application.",
+         "Layout":"list",
+         "Choices":[
+            {
+               "Label":"Web application / website with small components",
+               "Id":"Q2_1"
+            },
+            {
+               "Label":"Large scale web application like e-commerce or social website development",
+               "Id":"Q2_2"
+            },
+            {
+               "Label":"General desktop application",
+               "Id":"Q2_3"
+            },
+            {
+               "Label":"Application with a simply business logic that does not need to scale out",
+               "Id":"Q2_4"
+            },
+            {
+               "Label":"Enterprise or business application with traditional IT departments and processes",
+               "Id":"Q2_5"
+            },
+            {
+               "Label":"Application with a fixed set of core functionalities and a dynamic set of functionalities that need frequent updates",
+               "Id":"Q2_6"
+            },
+            {
+               "Label":"Large, complex, enterprise-wide systems that require integration with many heterogeneous applications and services",
+               "Id":"Q2_7"
+            },
+            {
+               "Label":"Application that has many shared components, particularly components across the enterprise",
+               "Id":"Q2_8"
+            },
+            {
+               "Label":"Application with immense and rapidly growing data systems",
+               "Id":"Q2_9"
+            },
+            {
+               "Label":"Application that requires strict standards of testability",
+               "Id":"Q2_10"
+            },
+            {
+               "Label":"None of the above",
+               "Id":"Q2_11"
+            }
+         ]
+      },
+      {
+         "Id":"Q3",
+         "Type":"ChooseMany",
+         "Body":"Please choose the most relevant non-functional requirements for your application.",
+         "Layout":"list",
+         "Choices":[
+            {
+               "Label":"Maintainability (how easy the software system can be modified to correct faults, improve performance, or other attributes, or adapt to a changed environment)",
+               "Id":"Q3_1"
+            },
+            {
+               "Label":"Performance (amount of work accomplished by a system and the limiting factor in the end-usability of the system)",
+               "Id":"Q3_2"
+            },
+            {
+               "Label":"Portability (the degree in which the same architecture can be used in different environments)",
+               "Id":"Q3_3"
+            },
+            {
+               "Label":"Reliability (consistency in the anticipation of software operations - e.g, in terms of the number of software faults (bugs), expressed as faults per thousand lines of code)",
+               "Id":"Q3_4"
+            },
+            {
+               "Label":"Security (the ability to control who can perform what actions on particular resources)",
+               "Id":"Q3_5"
+            }
+         ]
+      },
+      {
+         "Id":"Q4",
+         "Type":"ChooseMany",
+         "Body":"Please choose the desired features of your application for development and deployment.",
+         "Layout":"list",
+         "Choices":[
+            {
+               "Label":"High ease of development / quick development with fewer developers",
+               "Id":"Q4_1"
+            },
+            {
+               "Label":"Easy to understand and modify the development",
+               "Id":"Q4_2"
+            },
+            {
+               "Label":"Easy to rewrite and update parts of the development",
+               "Id":"Q4_3"
+            },
+            {
+               "Label":"Development teams that are spread out",
+               "Id":"Q4_4"
+            },
+            {
+               "Label":"Special functionality to address without rewriting the original application",
+               "Id":"Q4_5"
+            },
+            {
+               "Label":"High ease of deployment",
+               "Id":"Q4_6"
+            },
+            {
+               "Label":"Rapid and frequent development and deployment",
+               "Id":"Q4_7"
+            },
+            {
+               "Label":"Independently deployable",
+               "Id":"Q4_8"
+            },
+            {
+               "Label":"High speed with creating and deploying new applications",
+               "Id":"Q4_9"
+            },
+            {
+               "Label":"Add new modules without making changes to the existing system",
+               "Id":"Q4_10"
+            },
+            {
+               "Label":"Quick response to a constantly changing environment",
+               "Id":"Q4_11"
+            },
+            {
+               "Label":"Reusability of integrations and component sharing",
+               "Id":"Q4_12"
+            }
+         ]
+      },
+      {
+         "Id":"Q5",
+         "Type":"ChooseMany",
+         "Body":"Please choose the desired features of your architecture.",
+         "Layout":"list",
+         "Choices":[
+            {
+               "Label":"Asynchronous communication / data flow (information can be exchanged independent of time)",
+               "Id":"Q5_1"
+            },
+            {
+               "Label":"Synchronous communication / data flow (messages can only be exchanged in real time)",
+               "Id":"Q5_2"
+            },
+            {
+               "Label":"Loose coupling (degree of dependency between components is very low)",
+               "Id":"Q5_3"
+            },
+            {
+               "Label":"Independent services (services can be developed and deployed independently of one another)",
+               "Id":"Q5_4"
+            },
+            {
+               "Label":"Separation of concerns (separating an application into distinct sections each of which address a separate concern)",
+               "Id":"Q5_5"
+            },
+            {
+               "Label":"Plug-in components (adding additional feature as plugins to the core application)",
+               "Id":"Q5_6"
+            },
+            {
+               "Label":"Dynamic (system components and connections can be created and destroyed during runtimes)",
+               "Id":"Q5_7"
+            },
+            {
+               "Label":"High volume data (size of the data sets to be processed larger than terabytes)",
+               "Id":"Q5_8"
+            }
+         ]
+      }
+   ]
+}
