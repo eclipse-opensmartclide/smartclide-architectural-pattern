@@ -3,10 +3,7 @@ package org.eclipse.opensmartclide.architecturalpatterns.selection;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-//import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-//import com.fasterxml.jackson.databind.JsonSerializer;
 
 import java.io.IOException;
 import java.nio.file.Files;
