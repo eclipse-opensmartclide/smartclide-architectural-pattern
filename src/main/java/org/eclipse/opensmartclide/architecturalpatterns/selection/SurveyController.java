@@ -6,32 +6,35 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Objects;
+
 
 @RestController
 public class SurveyController {
-	
-	private final String SURVEY_JSON_FILE_PATH =
-			"jsonfiles/survey.json";
+		
+	final URL url = this.getClass().getResource("/jsonfiles/survey.json");
 	
 	ObjectMapper mapper = new ObjectMapper();
 	
 	@GetMapping("/survey")
 	public String getSurvey() {
-		 Path filePath = Path.of(SURVEY_JSON_FILE_PATH);
-		 //System.out.println(filePath);
-		 //JsonNode jsonNode = null;
-		 String surveyJsonStr = null;
+		
+		String surveyJsonStr = null;
 		 
-		 try {
-			 surveyJsonStr = Files.readString(filePath);
-			 //jsonNode = mapper.readTree(surveyJsonStr);			 
+		try {
+			
+		 final Path filePath = Path.of(Objects.requireNonNull(url).toURI());
+		 surveyJsonStr = Files.readString(filePath);		 
 			 
-		 } catch (IOException e) {
+		} catch (URISyntaxException | IOException e) {
 			 e.printStackTrace();
-		 }
-		 return surveyJsonStr;
+		}
+		
+		return surveyJsonStr;	
 	}
-	
 }
+	
