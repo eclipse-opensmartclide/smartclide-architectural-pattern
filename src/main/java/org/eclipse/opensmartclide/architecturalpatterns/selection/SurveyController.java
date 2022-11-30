@@ -20,7 +20,7 @@ public class SurveyController {
 	
 	ObjectMapper mapper = new ObjectMapper();
 	
-	@GetMapping("/survey")
+	@GetMapping("/survey", produces = MediaType.APPLICATION_JSON_VALUE)
 	public String getSurvey() {
 		
 		String surveyJsonStr = null;
