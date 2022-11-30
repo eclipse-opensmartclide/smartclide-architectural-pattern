@@ -11,7 +11,7 @@ public class SupportedPatternsController {
 
 	@GetMapping("/supported-patterns")
 	public List<ArchitecturalPatterns> getSupportedPatterns() {
-			
+
 		return Arrays.asList(ArchitecturalPatterns.values());
 	}
 }

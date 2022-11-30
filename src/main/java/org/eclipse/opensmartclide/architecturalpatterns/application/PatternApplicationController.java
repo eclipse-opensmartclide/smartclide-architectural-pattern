@@ -8,7 +8,7 @@ public class PatternApplicationController {
 
 	@GetMapping("/application")
 	public String setupPattern() {
-		//TODO
+		// TODO
 		return "TODO: Architectural Pattern is being set up.";
 	}
 }
