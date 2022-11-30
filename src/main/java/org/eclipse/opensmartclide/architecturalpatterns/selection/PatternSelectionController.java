@@ -28,7 +28,7 @@ public class PatternSelectionController {
 	
 	final URL url = this.getClass().getResource("/jsonfiles/surveyEvaluation.json");
 	
-	@PostMapping("/evaluation")
+	@PostMapping("/evaluation", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public String evaluateSurveyInput(@RequestBody String input){
 		
 		if (input == null) {
