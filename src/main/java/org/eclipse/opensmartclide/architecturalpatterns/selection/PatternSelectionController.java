@@ -52,15 +52,18 @@ public class PatternSelectionController {
 
 			// Iterate over survey question IDs
 			ListIterator<String> itr = input.listIterator();
-
 			while (itr.hasNext()) {
 				String next = itr.next();
+				if (jsonNode.get(next) == null) {
+					throw new IllegalArgumentException(
+							"Invalid survey input received: " + next + "is not a valid item ID.\n");
+				}
 				valuesJsonNode = jsonNode.get(next).get(0);
 
 				for (ArchitecturalPatterns pattern : patternList) {
 					int currentValue = patternValues.get(pattern);
 					int newValue = currentValue + valuesJsonNode.get(pattern.name()).asInt();
-					// Update evaluation value for pattern
+					// Update evaluation score for pattern
 					patternValues.put(pattern, newValue);
 				}
 			}
