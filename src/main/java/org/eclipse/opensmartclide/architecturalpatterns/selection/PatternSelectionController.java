@@ -23,7 +23,29 @@ public class PatternSelectionController {
 
 	EnumMap<ArchitecturalPatterns, Integer> patternValues = new EnumMap<>(ArchitecturalPatterns.class);
 
-	final URL url = this.getClass().getResource("/jsonfiles/surveyEvaluation.json");
+	public JsonNode readSurveyEvaluation() {
+
+		final URL url = this.getClass().getResource("/jsonfiles/surveyEvaluation.json");
+
+		String jsonStr = null;
+		JsonNode node = null;
+		ObjectMapper mapper = new ObjectMapper();
+
+		try {
+
+			// Read evaluation values from JSON file
+			final Path filePath = Path.of(Objects.requireNonNull(url).toURI());
+			jsonStr = Files.readString(filePath);
+			node = mapper.readValue(jsonStr, JsonNode.class);
+
+		} catch (URISyntaxException | IOException e) {
+			e.printStackTrace();
+		}
+
+		return node;
+	}
+
+	JsonNode jsonNode = readSurveyEvaluation();
 
 	@PostMapping(value = "/evaluation", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public String evaluateSurveyInput(@RequestBody List<String> input) {
@@ -37,33 +59,21 @@ public class PatternSelectionController {
 		patternValues.put(ArchitecturalPatterns.SPACE_BASED, 0);
 
 		JsonNode valuesJsonNode = null;
-		ObjectMapper mapper = new ObjectMapper();
 
-		try {
-
-			// Read evaluation values from JSON file
-			final Path filePath = Path.of(Objects.requireNonNull(url).toURI());
-			String jsonStr = Files.readString(filePath);
-			JsonNode jsonNode = mapper.readValue(jsonStr, JsonNode.class);
-
-			// Iterate over survey question IDs
-			for (String id : input) {
-				if (jsonNode.get(id) == null) {
-					throw new IllegalArgumentException(
-							"Invalid survey input received: " + id + "is not a valid item ID.\n");
-				}
-				valuesJsonNode = jsonNode.get(id).get(0);
-
-				for (ArchitecturalPatterns pattern : ArchitecturalPatterns.values()) {
-					int currentValue = patternValues.get(pattern);
-					int newValue = currentValue + valuesJsonNode.get(pattern.name()).asInt();
-					// Update evaluation score for pattern
-					patternValues.put(pattern, newValue);
-				}
+		// Iterate over survey question IDs
+		for (String id : input) {
+			if (jsonNode.get(id) == null) {
+				throw new IllegalArgumentException(
+						"Invalid survey input received: " + id + "is not a valid item ID.\n");
 			}
+			valuesJsonNode = jsonNode.get(id).get(0);
 
-		} catch (URISyntaxException | IOException e) {
-			e.printStackTrace();
+			for (ArchitecturalPatterns pattern : ArchitecturalPatterns.values()) {
+				int currentValue = patternValues.get(pattern);
+				int newValue = currentValue + valuesJsonNode.get(pattern.name()).asInt();
+				// Update evaluation score for pattern
+				patternValues.put(pattern, newValue);
+			}
 		}
 
 		return patternValues.toString();
