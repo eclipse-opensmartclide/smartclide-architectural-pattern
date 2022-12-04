@@ -14,10 +14,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.Arrays;
 import java.util.EnumMap;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.Objects;
 
 @RestController
@@ -38,8 +36,6 @@ public class PatternSelectionController {
 		patternValues.put(ArchitecturalPatterns.SERVICE_ORIENTED, 0);
 		patternValues.put(ArchitecturalPatterns.SPACE_BASED, 0);
 
-		List<ArchitecturalPatterns> patternList = Arrays.asList(ArchitecturalPatterns.values());
-
 		JsonNode valuesJsonNode = null;
 		ObjectMapper mapper = new ObjectMapper();
 
@@ -51,16 +47,14 @@ public class PatternSelectionController {
 			JsonNode jsonNode = mapper.readValue(jsonStr, JsonNode.class);
 
 			// Iterate over survey question IDs
-			ListIterator<String> itr = input.listIterator();
-			while (itr.hasNext()) {
-				String next = itr.next();
-				if (jsonNode.get(next) == null) {
+			for (String id : input) {
+				if (jsonNode.get(id) == null) {
 					throw new IllegalArgumentException(
-							"Invalid survey input received: " + next + "is not a valid item ID.\n");
+							"Invalid survey input received: " + id + "is not a valid item ID.\n");
 				}
-				valuesJsonNode = jsonNode.get(next).get(0);
+				valuesJsonNode = jsonNode.get(id).get(0);
 
-				for (ArchitecturalPatterns pattern : patternList) {
+				for (ArchitecturalPatterns pattern : ArchitecturalPatterns.values()) {
 					int currentValue = patternValues.get(pattern);
 					int newValue = currentValue + valuesJsonNode.get(pattern.name()).asInt();
 					// Update evaluation score for pattern
