@@ -1,8 +1,8 @@
 package org.eclipse.opensmartclide.architecturalpatterns.selection;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.eclipse.opensmartclide.architecturalpatterns.supportedpatterns.ArchitecturalPatterns;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,12 +24,12 @@ import java.util.Objects;
 public class PatternSelectionController {
 
 	private EnumMap<ArchitecturalPatterns, Integer> patternValues = new EnumMap<>(ArchitecturalPatterns.class);
-	
+
 	final URL url = this.getClass().getResource("/jsonfiles/surveyEvaluation.json");
 
 	private JsonNode readSurveyEvaluation() {
 
-		final Logger logger = LogManager.getLogger(PatternSelectionController.class);
+		final Logger logger = LoggerFactory.getLogger(PatternSelectionController.class);
 
 		ObjectMapper mapper = new ObjectMapper();
 		JsonNode evaluationNode = mapper.createObjectNode();
