@@ -1,5 +1,7 @@
 package org.eclipse.opensmartclide.architecturalpatterns.selection;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.eclipse.opensmartclide.architecturalpatterns.supportedpatterns.ArchitecturalPatterns;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,31 +23,31 @@ import java.util.Objects;
 @RestController
 public class PatternSelectionController {
 
-	EnumMap<ArchitecturalPatterns, Integer> patternValues = new EnumMap<>(ArchitecturalPatterns.class);
+	private EnumMap<ArchitecturalPatterns, Integer> patternValues = new EnumMap<>(ArchitecturalPatterns.class);
 
-	public JsonNode readSurveyEvaluation() {
+	private JsonNode readSurveyEvaluation() {
 
-		final URL url = this.getClass().getResource("/jsonfiles/surveyEvaluation.json");
+		final Logger logger = LogManager.getLogger(PatternSelectionController.class);
 
-		String jsonStr = null;
-		JsonNode node = null;
 		ObjectMapper mapper = new ObjectMapper();
+		JsonNode evaluationNode = mapper.createObjectNode();
 
 		try {
 
 			// Read evaluation values from JSON file
+			final URL url = this.getClass().getResource("/jsonfiles/surveyEvaluation.json");
 			final Path filePath = Path.of(Objects.requireNonNull(url).toURI());
-			jsonStr = Files.readString(filePath);
-			node = mapper.readValue(jsonStr, JsonNode.class);
+			String jsonStr = Files.readString(filePath);
+			evaluationNode = mapper.readValue(jsonStr, JsonNode.class);
 
 		} catch (URISyntaxException | IOException e) {
-			e.printStackTrace();
+			logger.error("Failed to read survey evaluation file!", e);
 		}
 
-		return node;
+		return evaluationNode;
 	}
 
-	JsonNode jsonNode = readSurveyEvaluation();
+	JsonNode surveyEvaluationNode = readSurveyEvaluation();
 
 	@PostMapping(value = "/evaluation", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public String evaluateSurveyInput(@RequestBody List<String> input) {
@@ -58,15 +60,13 @@ public class PatternSelectionController {
 		patternValues.put(ArchitecturalPatterns.SERVICE_ORIENTED, 0);
 		patternValues.put(ArchitecturalPatterns.SPACE_BASED, 0);
 
-		JsonNode valuesJsonNode = null;
-
 		// Iterate over survey question IDs
 		for (String id : input) {
-			if (jsonNode.get(id) == null) {
+			if (surveyEvaluationNode.get(id) == null) {
 				throw new IllegalArgumentException(
-						"Invalid survey input received: " + id + "is not a valid item ID.\n");
+						"Invalid survey input received: " + id + "is not a valid question ID.\n");
 			}
-			valuesJsonNode = jsonNode.get(id).get(0);
+			JsonNode valuesJsonNode = surveyEvaluationNode.get(id).get(0);
 
 			for (ArchitecturalPatterns pattern : ArchitecturalPatterns.values()) {
 				int currentValue = patternValues.get(pattern);
