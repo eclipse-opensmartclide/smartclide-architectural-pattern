@@ -24,28 +24,27 @@ import java.util.Objects;
 public class PatternSelectionController {
 
 	private EnumMap<ArchitecturalPatterns, Integer> patternValues = new EnumMap<>(ArchitecturalPatterns.class);
-
 	final URL url = this.getClass().getResource("/jsonfiles/surveyEvaluation.json");
-
+	final Logger logger = LoggerFactory.getLogger(PatternSelectionController.class);
+	
 	private JsonNode readSurveyEvaluation() {
 
-		final Logger logger = LoggerFactory.getLogger(PatternSelectionController.class);
-
 		ObjectMapper mapper = new ObjectMapper();
-		JsonNode evaluationNode = mapper.createObjectNode();
+		JsonNode node = mapper.createObjectNode();
 
 		try {
 
 			// Read evaluation values from JSON file
 			final Path filePath = Path.of(Objects.requireNonNull(url).toURI());
 			String jsonStr = Files.readString(filePath);
-			evaluationNode = mapper.readValue(jsonStr, JsonNode.class);
+			return mapper.readValue(jsonStr, JsonNode.class);
 
 		} catch (URISyntaxException | IOException e) {
+
 			logger.error("Failed to read survey evaluation file!", e);
 		}
 
-		return evaluationNode;
+		return node;
 	}
 
 	JsonNode surveyEvaluationNode = readSurveyEvaluation();
@@ -61,11 +60,14 @@ public class PatternSelectionController {
 		patternValues.put(ArchitecturalPatterns.SERVICE_ORIENTED, 0);
 		patternValues.put(ArchitecturalPatterns.SPACE_BASED, 0);
 
+		if (surveyEvaluationNode == null)
+			throw new NullPointerException("Evaluation values are not being referenced.");
+
 		// Iterate over survey question IDs
 		for (String id : input) {
 			if (surveyEvaluationNode.get(id) == null) {
 				throw new IllegalArgumentException(
-						"Invalid survey input received: " + id + "is not a valid question ID.\n");
+						"Invalid survey input received: " + id + "is not a valid question ID.");
 			}
 			JsonNode valuesJsonNode = surveyEvaluationNode.get(id).get(0);
 
