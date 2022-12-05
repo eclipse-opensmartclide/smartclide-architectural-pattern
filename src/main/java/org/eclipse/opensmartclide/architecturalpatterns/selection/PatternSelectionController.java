@@ -24,6 +24,8 @@ import java.util.Objects;
 public class PatternSelectionController {
 
 	private EnumMap<ArchitecturalPatterns, Integer> patternValues = new EnumMap<>(ArchitecturalPatterns.class);
+	
+	final URL url = this.getClass().getResource("/jsonfiles/surveyEvaluation.json");
 
 	private JsonNode readSurveyEvaluation() {
 
@@ -35,7 +37,6 @@ public class PatternSelectionController {
 		try {
 
 			// Read evaluation values from JSON file
-			final URL url = this.getClass().getResource("/jsonfiles/surveyEvaluation.json");
 			final Path filePath = Path.of(Objects.requireNonNull(url).toURI());
 			String jsonStr = Files.readString(filePath);
 			evaluationNode = mapper.readValue(jsonStr, JsonNode.class);
