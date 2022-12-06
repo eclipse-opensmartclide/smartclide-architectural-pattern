@@ -1,85 +1,65 @@
 package org.eclipse.opensmartclide.architecturalpatterns.selection;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import org.eclipse.opensmartclide.architecturalpatterns.service.JsonHandler;
 import org.eclipse.opensmartclide.architecturalpatterns.supportedpatterns.ArchitecturalPatterns;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.util.EnumMap;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
+import java.util.Map;
 
 @RestController
 public class PatternSelectionController {
+    private final JsonHandler jsonHandler;
 
-	private EnumMap<ArchitecturalPatterns, Integer> patternValues = new EnumMap<>(ArchitecturalPatterns.class);
-	final URL url = this.getClass().getResource("/jsonfiles/surveyEvaluation.json");
-	final Logger logger = LoggerFactory.getLogger(PatternSelectionController.class);
-	
-	private JsonNode readSurveyEvaluation() {
+    public PatternSelectionController(final JsonHandler jsonHandler) {
+        this.jsonHandler = jsonHandler;
+    }
 
-		ObjectMapper mapper = new ObjectMapper();
-		JsonNode node = mapper.createObjectNode();
+    @PostMapping(
+            value = "/evaluation",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public Map<ArchitecturalPatterns, Integer> evaluateSurveyInput(@RequestBody List<String> input) {
+        return calculatePatternValues(input);
+    }
 
-		try {
+    private HashMap<ArchitecturalPatterns, Integer> calculatePatternValues(final List<String> input) {
+        // Initialize
+        final JsonNode surveyEvaluationNode = jsonHandler.getSurveyEvaluationNode();
+        final HashMap<ArchitecturalPatterns, Integer> patternValues = initializePatternValues();
 
-			// Read evaluation values from JSON file
-			final Path filePath = Path.of(Objects.requireNonNull(url).toURI());
-			String jsonStr = Files.readString(filePath);
-			return mapper.readValue(jsonStr, JsonNode.class);
+        // Iterate over survey question IDs
+        for (String id : input) {
+            if (surveyEvaluationNode.get(id) == null) {
+                throw new IllegalArgumentException("Invalid survey input received: " + id + "is not a valid question ID.");
+            }
+            JsonNode valuesJsonNode = surveyEvaluationNode.get(id).get(0);
 
-		} catch (URISyntaxException | IOException e) {
+            for (ArchitecturalPatterns pattern : ArchitecturalPatterns.values()) {
+                int newValue = patternValues.get(pattern) + valuesJsonNode.get(pattern.name()).asInt();
+                // Update evaluation score for pattern
+                patternValues.put(pattern, newValue);
+            }
+        }
+        return patternValues;
+    }
 
-			logger.error("Failed to read survey evaluation file!", e);
-		}
-
-		return node;
-	}
-
-	JsonNode surveyEvaluationNode = readSurveyEvaluation();
-
-	@PostMapping(value = "/evaluation", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public String evaluateSurveyInput(@RequestBody List<String> input) {
-
-		// Initialize
-		patternValues.put(ArchitecturalPatterns.LAYERED, 0);
-		patternValues.put(ArchitecturalPatterns.EVENT_DRIVEN, 0);
-		patternValues.put(ArchitecturalPatterns.MICROKERNEL, 0);
-		patternValues.put(ArchitecturalPatterns.MICROSERVICES, 0);
-		patternValues.put(ArchitecturalPatterns.SERVICE_ORIENTED, 0);
-		patternValues.put(ArchitecturalPatterns.SPACE_BASED, 0);
-
-		if (surveyEvaluationNode == null)
-			throw new NullPointerException("Evaluation values are not being referenced.");
-
-		// Iterate over survey question IDs
-		for (String id : input) {
-			if (surveyEvaluationNode.get(id) == null) {
-				throw new IllegalArgumentException(
-						"Invalid survey input received: " + id + "is not a valid question ID.");
-			}
-			JsonNode valuesJsonNode = surveyEvaluationNode.get(id).get(0);
-
-			for (ArchitecturalPatterns pattern : ArchitecturalPatterns.values()) {
-				int currentValue = patternValues.get(pattern);
-				int newValue = currentValue + valuesJsonNode.get(pattern.name()).asInt();
-				// Update evaluation score for pattern
-				patternValues.put(pattern, newValue);
-			}
-		}
-
-		return patternValues.toString();
-
-	}
+    private HashMap<ArchitecturalPatterns, Integer> initializePatternValues() {
+        return new HashMap<>(
+                Map.of(
+                        ArchitecturalPatterns.LAYERED, 0,
+                        ArchitecturalPatterns.EVENT_DRIVEN, 0,
+                        ArchitecturalPatterns.MICROKERNEL, 0,
+                        ArchitecturalPatterns.MICROSERVICES, 0,
+                        ArchitecturalPatterns.SERVICE_ORIENTED, 0,
+                        ArchitecturalPatterns.SPACE_BASED, 0
+                )
+        );
+    }
 }

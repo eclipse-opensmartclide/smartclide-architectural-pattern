@@ -5,9 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class ArchitecturalPatternsApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(ArchitecturalPatternsApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(ArchitecturalPatternsApplication.class, args);
+    }
 }
