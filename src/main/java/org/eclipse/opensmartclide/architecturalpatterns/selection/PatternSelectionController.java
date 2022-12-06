@@ -39,7 +39,7 @@ public class PatternSelectionController {
             if (surveyEvaluationNode.get(id) == null) {
                 throw new IllegalArgumentException("Invalid survey input received: " + id + "is not a valid question ID.");
             }
-            JsonNode valuesJsonNode = surveyEvaluationNode.get(id).get(0);
+            JsonNode valuesJsonNode = surveyEvaluationNode.get(id);
 
             for (ArchitecturalPatterns pattern : ArchitecturalPatterns.values()) {
                 int newValue = patternValues.get(pattern) + valuesJsonNode.get(pattern.name()).asInt();

@@ -1,5 +1,5 @@
 {
-  "Q1_1": [
+  "Q1_1":
     {
       "LAYERED": 6,
       "EVENT_DRIVEN": 3,
@@ -7,9 +7,8 @@
       "MICROSERVICES": 2,
       "SERVICE_ORIENTED": 4,
       "SPACE_BASED": 3
-    }
-  ],
-  "Q1_2": [
+    },
+  "Q1_2":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -17,9 +16,8 @@
       "MICROSERVICES": 2,
       "SERVICE_ORIENTED": 3,
       "SPACE_BASED": 1
-    }
-  ],
-  "Q1_3": [
+    },
+  "Q1_3":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -27,9 +25,8 @@
       "MICROSERVICES": 2,
       "SERVICE_ORIENTED": 3,
       "SPACE_BASED": 1
-    }
-  ],
-  "Q1_4": [
+    },
+  "Q1_4":
     {
       "LAYERED": 3,
       "EVENT_DRIVEN": 5,
@@ -37,9 +34,8 @@
       "MICROSERVICES": 5,
       "SERVICE_ORIENTED": 18,
       "SPACE_BASED": 1
-    }
-  ],
-  "Q1_5": [
+    },
+  "Q1_5":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -47,9 +43,8 @@
       "MICROSERVICES": 2,
       "SERVICE_ORIENTED": 3,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q1_6": [
+    },
+  "Q1_6":
     {
       "LAYERED": 3,
       "EVENT_DRIVEN": 0,
@@ -57,9 +52,8 @@
       "MICROSERVICES": 1,
       "SERVICE_ORIENTED": 3,
       "SPACE_BASED": 3
-    }
-  ],
-  "Q1_7": [
+    },
+  "Q1_7":
     {
       "LAYERED": 1,
       "EVENT_DRIVEN": 0,
@@ -67,9 +61,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q1_8": [
+    },
+  "Q1_8":
     {
       "LAYERED": 2,
       "EVENT_DRIVEN": 2,
@@ -77,9 +70,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q1_9": [
+    },
+  "Q1_9":
     {
       "LAYERED": 2,
       "EVENT_DRIVEN": 0,
@@ -87,9 +79,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q1_10": [
+    },
+  "Q1_10":
     {
       "LAYERED": 2,
       "EVENT_DRIVEN": 0,
@@ -97,9 +88,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 2,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q1_11": [
+    },
+  "Q1_11":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -107,9 +97,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q1_12": [
+    },
+  "Q1_12":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -117,9 +106,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 7,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q1_13": [
+    },
+  "Q1_13":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -127,9 +115,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 3,
       "SPACE_BASED": 1
-    }
-  ],
-  "Q1_14": [
+    },
+  "Q1_14":
     {
       "LAYERED": 4,
       "EVENT_DRIVEN": 2,
@@ -137,9 +124,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 5,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q1_15": [
+    },
+  "Q1_15":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -147,9 +133,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 1,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q1_16": [
+    },
+  "Q1_16":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -157,9 +142,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q2_1": [
+    },
+  "Q2_1":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -167,9 +151,8 @@
       "MICROSERVICES": 1,
       "SERVICE_ORIENTED": 1,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q2_2": [
+    },
+  "Q2_2":
     {
       "LAYERED": 1,
       "EVENT_DRIVEN": 0,
@@ -177,9 +160,8 @@
       "MICROSERVICES": 1,
       "SERVICE_ORIENTED": 1,
       "SPACE_BASED": 1
-    }
-  ],
-  "Q2_3": [
+    },
+  "Q2_3":
     {
       "LAYERED": 1,
       "EVENT_DRIVEN": 0,
@@ -187,9 +169,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q2_4": [
+    },
+  "Q2_4":
     {
       "LAYERED": 1,
       "EVENT_DRIVEN": 0,
@@ -197,9 +178,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q2_5": [
+    },
+  "Q2_5":
     {
       "LAYERED": 1,
       "EVENT_DRIVEN": 0,
@@ -207,9 +187,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q2_6": [
+    },
+  "Q2_6":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -217,9 +196,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q2_7": [
+    },
+  "Q2_7":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 1,
@@ -227,9 +205,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 1,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q2_8": [
+    },
+  "Q2_8":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 1,
@@ -237,9 +214,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 1,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q2_9": [
+    },
+  "Q2_9":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 1,
@@ -247,9 +223,8 @@
       "MICROSERVICES": 1,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q2_10": [
+    },
+  "Q2_10":
     {
       "LAYERED": 1,
       "EVENT_DRIVEN": 0,
@@ -257,9 +232,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q2_11": [
+    },
+  "Q2_11":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -267,9 +241,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q3_1": [
+    },
+  "Q3_1":
     {
       "LAYERED": 10,
       "EVENT_DRIVEN": 4,
@@ -277,9 +250,8 @@
       "MICROSERVICES": 3,
       "SERVICE_ORIENTED": 2,
       "SPACE_BASED": 1
-    }
-  ],
-  "Q3_2": [
+    },
+  "Q3_2":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 1,
@@ -287,9 +259,8 @@
       "MICROSERVICES": 3,
       "SERVICE_ORIENTED": 2,
       "SPACE_BASED": 2
-    }
-  ],
-  "Q3_3": [
+    },
+  "Q3_3":
     {
       "LAYERED": 16,
       "EVENT_DRIVEN": 7,
@@ -297,9 +268,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 1,
       "SPACE_BASED": 1
-    }
-  ],
-  "Q3_4": [
+    },
+  "Q3_4":
     {
       "LAYERED": 7,
       "EVENT_DRIVEN": 1,
@@ -307,9 +277,8 @@
       "MICROSERVICES": 3,
       "SERVICE_ORIENTED": 5,
       "SPACE_BASED": 1
-    }
-  ],
-  "Q3_5": [
+    },
+  "Q3_5":
     {
       "LAYERED": 1,
       "EVENT_DRIVEN": 0,
@@ -317,9 +286,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q4_1": [
+    },
+  "Q4_1":
     {
       "LAYERED": 1,
       "EVENT_DRIVEN": 0,
@@ -327,9 +295,8 @@
       "MICROSERVICES": 1,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q4_2": [
+    },
+  "Q4_2":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -337,9 +304,8 @@
       "MICROSERVICES": 1,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q4_3": [
+    },
+  "Q4_3":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 1,
@@ -347,9 +313,8 @@
       "MICROSERVICES": 1,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q4_4": [
+    },
+  "Q4_4":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -357,9 +322,8 @@
       "MICROSERVICES": 1,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q4_5": [
+    },
+  "Q4_5":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -367,9 +331,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q4_6": [
+    },
+  "Q4_6":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -377,9 +340,8 @@
       "MICROSERVICES": 1,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 1
-    }
-  ],
-  "Q4_7": [
+    },
+  "Q4_7":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -387,9 +349,8 @@
       "MICROSERVICES": 1,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q4_8": [
+    },
+  "Q4_8":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -397,9 +358,8 @@
       "MICROSERVICES": 1,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q4_9": [
+    },
+  "Q4_9":
     {
       "LAYERED": 1,
       "EVENT_DRIVEN": 0,
@@ -407,9 +367,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 1,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q4_10": [
+    },
+  "Q4_10":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 1,
@@ -417,9 +376,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q4_11": [
+    },
+  "Q4_11":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -427,9 +385,8 @@
       "MICROSERVICES": 1,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 1
-    }
-  ],
-  "Q4_12": [
+    },
+  "Q4_12":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -437,9 +394,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 1,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q5_1": [
+    },
+  "Q5_1":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 1,
@@ -447,9 +403,8 @@
       "MICROSERVICES": 1,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q5_2": [
+    },
+  "Q5_2":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -457,9 +412,8 @@
       "MICROSERVICES": 1,
       "SERVICE_ORIENTED": 1,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q5_3": [
+    },
+  "Q5_3":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 1,
@@ -467,9 +421,8 @@
       "MICROSERVICES": 1,
       "SERVICE_ORIENTED": 1,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q5_4": [
+    },
+  "Q5_4":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -477,9 +430,8 @@
       "MICROSERVICES": 1,
       "SERVICE_ORIENTED": 1,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q5_5": [
+    },
+  "Q5_5":
     {
       "LAYERED": 1,
       "EVENT_DRIVEN": 0,
@@ -487,9 +439,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 1,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q5_6": [
+    },
+  "Q5_6":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -497,9 +448,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 0
-    }
-  ],
-  "Q5_7": [
+    },
+  "Q5_7":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -507,9 +457,8 @@
       "MICROSERVICES": 0,
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 1
-    }
-  ],
-  "Q5_8": [
+    },
+  "Q5_8":
     {
       "LAYERED": 0,
       "EVENT_DRIVEN": 0,
@@ -518,5 +467,4 @@
       "SERVICE_ORIENTED": 0,
       "SPACE_BASED": 1
     }
-  ]
 }
