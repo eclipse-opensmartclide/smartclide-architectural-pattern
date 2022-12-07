@@ -1,0 +1,14 @@
+###
+GET http://localhost:8080/supported-patterns
+
+###
+GET http://localhost:8080/application
+
+###
+GET http://localhost:8080/survey
+
+###
+POST http://localhost:8080/evaluation
+Content-Type: application/json
+
+[]
