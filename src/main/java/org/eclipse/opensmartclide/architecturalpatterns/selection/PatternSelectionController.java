@@ -1,7 +1,7 @@
 package org.eclipse.opensmartclide.architecturalpatterns.selection;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import org.eclipse.opensmartclide.architecturalpatterns.service.JsonHandler;
+import org.eclipse.opensmartclide.architecturalpatterns.service.SurveyJsonHandler;
 import org.eclipse.opensmartclide.architecturalpatterns.supportedpatterns.ArchitecturalPatterns;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,10 +14,10 @@ import java.util.Map;
 
 @RestController
 public class PatternSelectionController {
-    private final JsonHandler jsonHandler;
+    private final SurveyJsonHandler surveyJsonHandler;
 
-    public PatternSelectionController(final JsonHandler jsonHandler) {
-        this.jsonHandler = jsonHandler;
+    public PatternSelectionController(final SurveyJsonHandler surveyJsonHandler) {
+        this.surveyJsonHandler = surveyJsonHandler;
     }
 
     @PostMapping(
@@ -31,7 +31,7 @@ public class PatternSelectionController {
 
     private HashMap<ArchitecturalPatterns, Integer> calculatePatternValues(final List<String> input) {
         // Initialize
-        final JsonNode surveyEvaluationNode = jsonHandler.getSurveyEvaluationNode();
+        final JsonNode surveyEvaluationNode = surveyJsonHandler.getSurveyEvaluationNode();
         final HashMap<ArchitecturalPatterns, Integer> patternValues = initializePatternValues();
 
         // Iterate over survey question IDs

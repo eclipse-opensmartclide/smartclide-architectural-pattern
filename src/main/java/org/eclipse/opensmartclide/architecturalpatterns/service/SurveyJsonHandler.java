@@ -14,15 +14,15 @@ import java.nio.file.Path;
 import java.util.Objects;
 
 @Component
-public class JsonHandler {
+public class SurveyJsonHandler {
     private static final String SURVEY_JSON_FILE_PATH = "/jsonfiles/survey.json";
     private static final String SURVEY_EVALUATION_JSON_PATH = "/jsonfiles/surveyEvaluation.json";
-    private static final Logger logger = LoggerFactory.getLogger(JsonHandler.class);
+    private static final Logger logger = LoggerFactory.getLogger(SurveyJsonHandler.class);
     private final ObjectMapper mapper;
     private final String survey;
     private final JsonNode surveyEvaluationNode;
 
-    public JsonHandler(final ObjectMapper mapper) {
+    public SurveyJsonHandler(final ObjectMapper mapper) {
         this.mapper = mapper;
         this.survey = readJsonFileIntoString(SURVEY_JSON_FILE_PATH);
         this.surveyEvaluationNode = readJsonFileIntoJsonNode(SURVEY_EVALUATION_JSON_PATH);
@@ -39,7 +39,7 @@ public class JsonHandler {
     private String readJsonFileIntoString(final String pathToFile) {
         logger.info("Reading file: {}", pathToFile);
         try {
-            final URL jsonUrl = JsonHandler.class.getResource(pathToFile);
+            final URL jsonUrl = SurveyJsonHandler.class.getResource(pathToFile);
             final Path path = Path.of(Objects.requireNonNull(jsonUrl).toURI());
             return Files.readString(path);
         } catch (URISyntaxException | IOException e) {
@@ -49,7 +49,6 @@ public class JsonHandler {
 
     private JsonNode readJsonFileIntoJsonNode(@SuppressWarnings("SameParameterValue") final String pathToFile) {
         try {
-            // Read evaluation values from JSON file
             final String jsonStr = readJsonFileIntoString(pathToFile);
             return mapper.readValue(jsonStr, JsonNode.class);
         } catch (IOException e) {

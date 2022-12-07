@@ -1,9 +1,12 @@
 package org.eclipse.opensmartclide.architecturalpatterns.supportedpatterns;
 
 public enum ArchitecturalPatterns {
-    EVENT_DRIVEN("Event-driven Architectural Pattern"), LAYERED("Layered Architectural Pattern"),
-    MICROKERNEL("Microkernel Architectural Pattern"), MICROSERVICES("Microservices Architectural Pattern"),
-    SERVICE_ORIENTED("Service-oriented Architectural Pattern"), SPACE_BASED("Space-based Architectural Pattern");
+    EVENT_DRIVEN("Event-driven Architectural Pattern"),
+    LAYERED("Layered Architectural Pattern"),
+    MICROKERNEL("Microkernel Architectural Pattern"),
+    MICROSERVICES("Microservices Architectural Pattern"),
+    SERVICE_ORIENTED("Service-oriented Architectural Pattern"),
+    SPACE_BASED("Space-based Architectural Pattern");
 
     private final String name;
 
@@ -12,7 +15,7 @@ public enum ArchitecturalPatterns {
     }
 
     @SuppressWarnings("unused")
-	public String getPatternName() {
+    public String getPatternName() {
         return name;
     }
 }
