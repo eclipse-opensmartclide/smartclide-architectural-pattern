@@ -1,88 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.6</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
-	<groupId>org.eclipse.opensmartclide</groupId>
-	<artifactId>architectural-patterns</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>Eclipse OpenSmartCLIDE Architectural Patterns</name>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.6</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>org.eclipse.opensmartclide</groupId>
+    <artifactId>architectural-patterns</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>Eclipse OpenSmartCLIDE Architectural Patterns</name>
 
-	<properties>
-		<java.version>11</java.version>
-		<jib-maven-plugin.version>3.3.1</jib-maven-plugin.version>
-	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+    <properties>
+        <java.version>11</java.version>
+        <jib-maven-plugin.version>3.3.1</jib-maven-plugin.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
-		<dependency>
-		    <groupId>com.fasterxml.jackson.core</groupId>
-		    <artifactId>jackson-core</artifactId>
-		</dependency>
-		<dependency>
-		    <groupId>com.fasterxml.jackson.core</groupId>
-		    <artifactId>jackson-databind</artifactId>
-		</dependency>
-		<dependency>
-		    <groupId>com.fasterxml.jackson.core</groupId>
-		    <artifactId>jackson-annotations</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
-	</dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			
-			<plugin>
-				<groupId>com.google.cloud.tools</groupId>
-				<artifactId>jib-maven-plugin</artifactId>
-				<version>${jib-maven-plugin.version}</version>
-				<configuration>
-				    <from>
-					<image>eclipse-temurin:11.0.17_8-jre-jammy</image>
-				    </from>
-				    <to>
-					<image>ghcr.io/eclipse-opensmartclide/smartclide/${project.artifactId}:latest</image>
-				    </to>
-				    <container>
-					<ports>
-					    <port>8080</port>
-					</ports>
-					<entrypoint>
-					    <arg>java</arg>
-					    <arg>-Djava.security.egd=file:/dev/./urandom</arg>
-					    <arg>-cp</arg>
-					    <arg>app/libs/*:app/resources:app/classes</arg>
-					    <arg>org.eclipse.opensmartclide.architecturalpatterns.ArchitecturalPatternsApplication</arg>
-					</entrypoint>
-				    </container>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>${jib-maven-plugin.version}</version>
+                <configuration>
+                    <from>
+                        <image>eclipse-temurin:11.0.17_8-jre-jammy</image>
+                    </from>
+                    <to>
+                        <image>ghcr.io/eclipse-opensmartclide/smartclide/${project.artifactId}:latest</image>
+                    </to>
+                    <container>
+                        <ports>
+                            <port>8080</port>
+                        </ports>
+                        <entrypoint>
+                            <arg>java</arg>
+                            <arg>-Djava.security.egd=file:/dev/./urandom</arg>
+                            <arg>-cp</arg>
+                            <arg>app/libs/*:app/resources:app/classes</arg>
+                            <arg>org.eclipse.opensmartclide.architecturalpatterns.ArchitecturalPatternsApplication</arg>
+                        </entrypoint>
+                    </container>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
