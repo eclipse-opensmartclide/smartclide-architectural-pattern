@@ -1,0 +1,26 @@
+{
+  "Spring Boot": {
+    "LAYERED": null,
+    "EVENT_DRIVEN": null,
+    "MICROKERNEL": "https://github.com/devexpress-albania/microkernel",
+    "MICROSERVICES": null,
+    "SERVICE_ORIENTED": null,
+    "SPACE_BASED": null
+  },
+  "Node.js": {
+    "LAYERED": null,
+    "EVENT_DRIVEN": null,
+    "MICROKERNEL": "https://github.com/rse/microkernel",
+    "MICROSERVICES": null,
+    "SERVICE_ORIENTED": null,
+    "SPACE_BASED": null
+  },
+  "Python": {
+    "LAYERED": null,
+    "EVENT_DRIVEN": null,
+    "MICROKERNEL": null,
+    "MICROSERVICES": null,
+    "SERVICE_ORIENTED": null,
+    "SPACE_BASED": null
+  }
+}
