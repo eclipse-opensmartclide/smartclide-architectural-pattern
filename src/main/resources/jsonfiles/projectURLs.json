@@ -1,26 +1,26 @@
 {
-  "Spring Boot": {
-    "LAYERED": null,
-    "EVENT_DRIVEN": null,
-    "MICROKERNEL": "https://github.com/devexpress-albania/microkernel",
-    "MICROSERVICES": null,
-    "SERVICE_ORIENTED": null,
-    "SPACE_BASED": null
+  "Java with Spring Boot and MySQL": {
+    "Layered": "https://github.com/che-samples/web-java-spring-boot",
+    "Event-driven": "https://github.com/che-samples/web-java-spring-boot",
+    "Microkernel": "https://github.com/devexpress-albania/microkernel",
+    "Microservices": "https://github.com/che-samples/web-java-spring-boot",
+    "Service-oriented": "https://github.com/che-samples/web-java-spring-boot",
+    "Space-based": "https://github.com/che-samples/web-java-spring-boot"
   },
   "Node.js": {
-    "LAYERED": null,
-    "EVENT_DRIVEN": null,
-    "MICROKERNEL": "https://github.com/rse/microkernel",
-    "MICROSERVICES": null,
-    "SERVICE_ORIENTED": null,
-    "SPACE_BASED": null
+    "Layered": "https://github.com/che-samples/web-nodejs-sample",
+    "Event-driven":"https://github.com/che-samples/web-nodejs-sample",
+    "Microkernel": "https://github.com/rse/microkernel",
+    "Microservices": "https://github.com/che-samples/web-nodejs-sample",
+    "Service-oriented": "https://github.com/che-samples/web-nodejs-sample",
+    "Space-based": "https://github.com/che-samples/web-nodejs-sample"
   },
   "Python": {
-    "LAYERED": null,
-    "EVENT_DRIVEN": null,
-    "MICROKERNEL": null,
-    "MICROSERVICES": null,
-    "SERVICE_ORIENTED": null,
-    "SPACE_BASED": null
+    "Layered": "https://github.com/che-samples/python-hello-world",
+    "Event-driven": "https://github.com/che-samples/python-hello-world",
+    "Microkernel": "https://github.com/che-samples/python-hello-world",
+    "Microservices": "https://github.com/che-samples/python-hello-world",
+    "Service-oriented": "https://github.com/che-samples/python-hello-world",
+    "Space-based": "https://github.com/che-samples/python-hello-world"
   }
 }
