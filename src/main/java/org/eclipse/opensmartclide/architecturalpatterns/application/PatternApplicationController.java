@@ -29,13 +29,12 @@ public class PatternApplicationController {
 	}
 
 	@PostMapping(value = "/application", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public String applyPattern(@RequestParam("technology") String techName, @RequestParam("pattern") String pattern,
+	public String applyPattern(@RequestParam("framework") String framework, @RequestParam("pattern") String pattern,
 			@Nullable @RequestParam("name") String projName, @Nullable @RequestParam("visibility") String visibility,
 			@RequestHeader String gitLabServerURL, @RequestHeader String gitlabToken) {
 
 		try {
-			String repoUrl = getProjectURL(techName, pattern);
-			System.out.println(repoUrl);
+			String repoUrl = getProjectURL(framework, pattern);
 
 			if (repoUrl == null) {
 				throw new NullPointerException("Repository URL is not found.");
@@ -44,11 +43,12 @@ public class PatternApplicationController {
 				headers.set("gitLabServerURL", gitLabServerURL);
 				headers.set("gitlabToken", gitlabToken);
 
-				String query = "repoUrl=" + repoUrl + "&name=" + projName + "&visibility=" + visibility;
+				String query = "?repoUrl=" + repoUrl + "&name=" + projName + "&visibility=" + visibility;
 				HttpEntity<String> request = new HttpEntity<>(query, headers);
 
 				RestTemplate restTemplate = new RestTemplate();
 				String result = restTemplate.postForObject(importProjectURL, request, String.class);
+
 				return result;
 			}
 		} catch (IllegalArgumentException e) {
@@ -56,15 +56,18 @@ public class PatternApplicationController {
 		}
 	}
 
-	public String getProjectURL(String techName, String pattern) {
+	public String getProjectURL(String framework, String pattern) {
 		final JsonNode projUrlsJsonNode = projectJsonHandler.getProjectUrlsNode();
 
-		if (projUrlsJsonNode.get(techName) == null) {
+		if (projUrlsJsonNode.get(framework) == null) {
 			throw new IllegalArgumentException(
-					"Invalid technology received: " + techName + "is not a valid technology.");
+					"Invalid framework received: " + framework + "is not a valid framework.");
+		} else if (projUrlsJsonNode.get(framework).get(pattern) == null) {
+			throw new IllegalArgumentException(
+					"Invalid pattern received: " + pattern + "is not a valid pattern.");
 		}
-		
-		return 	projUrlsJsonNode.get(techName).get(pattern).asText();
+
+		return projUrlsJsonNode.get(framework).get(pattern).asText();
 	}
 
 }
