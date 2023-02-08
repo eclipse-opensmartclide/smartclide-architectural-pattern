@@ -2,6 +2,8 @@ package org.eclipse.opensmartclide.architecturalpatterns.application;
 
 import org.eclipse.opensmartclide.architecturalpatterns.service.ArchitecturalPatternsJsonHandler;
 import java.lang.IllegalArgumentException;
+import java.util.List;
+
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -10,6 +12,7 @@ import org.springframework.lang.Nullable;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,20 +39,14 @@ public class PatternApplicationController {
 			@RequestHeader String gitLabServerURL, @RequestHeader String gitlabToken) {
 
 		try {
+
 			String repoUrl = getProjectURL(framework, pattern);
 
 			if (repoUrl == null) {
 				throw new NullPointerException("Repository URL is not found.");
 			} else {
-
-				HttpEntity<String> request = createPOSTRequestQuery(repoUrl, framework, pattern, projName, visibility,
-						gitLabServerURL, gitlabToken);
-
-				// Make POST request to external project importer
-				RestTemplate restTemplate = new RestTemplate();
-				String result = restTemplate.postForObject(importProjectURL, request, String.class);
-
-				return result;
+				
+				return createProject(repoUrl, projName, visibility,gitLabServerURL,gitlabToken);
 			}
 		} catch (IllegalArgumentException e) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Expected a git-based URL", e);
@@ -69,13 +66,12 @@ public class PatternApplicationController {
 		return projUrlsJsonNode.get(framework).get(pattern).asText();
 	}
 
-	public HttpEntity<String> createPOSTRequestQuery(String repoUrl, String framework, String pattern, String projName,
-			String visibility, String gitLabServerURL, String gitlabToken) {
-		
+	public String createProject(String repoUrl, String projName, String visibility,
+			String gitLabServerURL, String gitlabToken) {
+
 		// Creating URL with parameters
 		MultiValueMap<String, String> parameters = new LinkedMultiValueMap<String, String>();
-		parameters.add("framework", framework);
-		parameters.add("pattern", pattern);
+		parameters.add("repoUrl", repoUrl);
 
 		if (projName != null)
 			parameters.add("name", projName);
@@ -84,7 +80,7 @@ public class PatternApplicationController {
 			parameters.add("visibility", visibility);
 
 		UriComponentsBuilder uriComponentsBuilder = UriComponentsBuilder.fromHttpUrl(repoUrl).queryParams(parameters);
-		String url = uriComponentsBuilder.build(false).encode().toUriString();
+		String url = uriComponentsBuilder.build().encode().toUriString();
 
 		// Setting headers
 		HttpHeaders headers = new HttpHeaders();
@@ -93,6 +89,11 @@ public class PatternApplicationController {
 
 		// Creating POST request query
 		HttpEntity<String> request = new HttpEntity<>(url, headers);
-		return request;
+		
+		// Make POST request to external project importer
+		RestTemplate restTemplate = new RestTemplate();
+		String response = restTemplate.postForObject(importProjectURL, request, String.class);
+
+		return response;
 	}
 }
