@@ -2,6 +2,7 @@ package org.eclipse.opensmartclide.architecturalpatterns.application;
 
 import org.eclipse.opensmartclide.architecturalpatterns.service.ArchitecturalPatternsJsonHandler;
 import java.lang.IllegalArgumentException;
+import java.net.URI;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
@@ -28,39 +30,43 @@ public class PatternApplicationController {
 		this.projectJsonHandler = jsonHandler;
 	}
 
-	@PostMapping(value = "/application", 
-			consumes = MediaType.APPLICATION_JSON_VALUE, 
-			produces = MediaType.APPLICATION_JSON_VALUE
-	)
-	
-	public String applyPattern(@RequestParam("framework") String framework, 
-			@RequestParam("pattern") String pattern,
-			@Nullable @RequestParam("name") String projName, 
-			@Nullable @RequestParam("visibility") String visibility,
-			@RequestHeader String gitLabServerURL, 
-			@RequestHeader String gitlabToken) {
+	@PostMapping(value = "/application", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+
+	public String applyPattern(@RequestParam("framework") String framework, @RequestParam("pattern") String pattern,
+			@Nullable @RequestParam("name") String projName, @Nullable @RequestParam("visibility") String visibility,
+			@RequestHeader String gitLabServerURL, @RequestHeader String gitlabToken) {
 
 		try {
 			String repoUrl = getProjectURL(framework, pattern);
-			MultiValueMap<String,String> parameters = new LinkedMultiValueMap<String,String>();
-			parameters.add("framework", framework);
-			parameters.add("pattern", pattern);
-			
-			if (projName != null) 
-				parameters.add("name", projName);
-			
-			if (visibility != null) 
-				parameters.add("visibility", visibility);
 
 			if (repoUrl == null) {
 				throw new NullPointerException("Repository URL is not found.");
 			} else {
+				
+				//Creating query with parameters
+				MultiValueMap<String,String> parameters = new LinkedMultiValueMap<String,String>();
+				parameters.add("framework", framework);
+				parameters.add("pattern", pattern);
+			
+				if (projName != null) 
+					parameters.add("name", projName);
+				
+				if (visibility != null) 
+					parameters.add("visibility", visibility);
+				
+				UriComponentsBuilder  uriComponentsBuilder = UriComponentsBuilder.fromHttpUrl(repoUrl).queryParams(parameters);
+				
+				String url =uriComponentsBuilder.build(false).encode().toUriString();
+				
+				//Setting headers
 				HttpHeaders headers = new HttpHeaders();
 				headers.set("gitLabServerURL", gitLabServerURL);
 				headers.set("gitlabToken", gitlabToken);
 				
-				HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<MultiValueMap<String, String>>(parameters, headers);
-
+				//Creating POST request query
+				HttpEntity<String> request = new HttpEntity<>(url, headers);
+				
+				//Make POST request to external project importer
 				RestTemplate restTemplate = new RestTemplate();
 				String result = restTemplate.postForObject(importProjectURL, request, String.class);
 
@@ -78,8 +84,7 @@ public class PatternApplicationController {
 			throw new IllegalArgumentException(
 					"Invalid framework received: " + framework + "is not a valid framework.");
 		} else if (projUrlsJsonNode.get(framework).get(pattern) == null) {
-			throw new IllegalArgumentException(
-					"Invalid pattern received: " + pattern + "is not a valid pattern.");
+			throw new IllegalArgumentException("Invalid pattern received: " + pattern + "is not a valid pattern.");
 		}
 
 		return projUrlsJsonNode.get(framework).get(pattern).asText();
