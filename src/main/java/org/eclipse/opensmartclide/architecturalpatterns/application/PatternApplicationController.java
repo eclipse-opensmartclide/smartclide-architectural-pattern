@@ -2,7 +2,6 @@ package org.eclipse.opensmartclide.architecturalpatterns.application;
 
 import org.eclipse.opensmartclide.architecturalpatterns.service.ArchitecturalPatternsJsonHandler;
 import java.lang.IllegalArgumentException;
-import java.net.URI;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -42,31 +41,11 @@ public class PatternApplicationController {
 			if (repoUrl == null) {
 				throw new NullPointerException("Repository URL is not found.");
 			} else {
-				
-				//Creating query with parameters
-				MultiValueMap<String,String> parameters = new LinkedMultiValueMap<String,String>();
-				parameters.add("framework", framework);
-				parameters.add("pattern", pattern);
-			
-				if (projName != null) 
-					parameters.add("name", projName);
-				
-				if (visibility != null) 
-					parameters.add("visibility", visibility);
-				
-				UriComponentsBuilder  uriComponentsBuilder = UriComponentsBuilder.fromHttpUrl(repoUrl).queryParams(parameters);
-				
-				String url =uriComponentsBuilder.build(false).encode().toUriString();
-				
-				//Setting headers
-				HttpHeaders headers = new HttpHeaders();
-				headers.set("gitLabServerURL", gitLabServerURL);
-				headers.set("gitlabToken", gitlabToken);
-				
-				//Creating POST request query
-				HttpEntity<String> request = new HttpEntity<>(url, headers);
-				
-				//Make POST request to external project importer
+
+				HttpEntity<String> request = createPOSTRequestQuery(repoUrl, framework, pattern, projName, visibility,
+						gitLabServerURL, gitlabToken);
+
+				// Make POST request to external project importer
 				RestTemplate restTemplate = new RestTemplate();
 				String result = restTemplate.postForObject(importProjectURL, request, String.class);
 
@@ -90,4 +69,30 @@ public class PatternApplicationController {
 		return projUrlsJsonNode.get(framework).get(pattern).asText();
 	}
 
+	public HttpEntity<String> createPOSTRequestQuery(String repoUrl, String framework, String pattern, String projName,
+			String visibility, String gitLabServerURL, String gitlabToken) {
+		
+		// Creating URL with parameters
+		MultiValueMap<String, String> parameters = new LinkedMultiValueMap<String, String>();
+		parameters.add("framework", framework);
+		parameters.add("pattern", pattern);
+
+		if (projName != null)
+			parameters.add("name", projName);
+
+		if (visibility != null)
+			parameters.add("visibility", visibility);
+
+		UriComponentsBuilder uriComponentsBuilder = UriComponentsBuilder.fromHttpUrl(repoUrl).queryParams(parameters);
+		String url = uriComponentsBuilder.build(false).encode().toUriString();
+
+		// Setting headers
+		HttpHeaders headers = new HttpHeaders();
+		headers.set("gitLabServerURL", gitLabServerURL);
+		headers.set("gitlabToken", gitlabToken);
+
+		// Creating POST request query
+		HttpEntity<String> request = new HttpEntity<>(url, headers);
+		return request;
+	}
 }
