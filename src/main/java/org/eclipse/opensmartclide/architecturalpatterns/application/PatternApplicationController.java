@@ -48,21 +48,24 @@ public class PatternApplicationController {
 				return createProject(repoUrl, projName, visibility,gitLabServerURL,gitlabToken);
 
 		} catch (IllegalArgumentException e) {
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Expected a git-based URL", e);
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Problem with either target project repository or input parameters: " + e.getMessage(), e);
 		}
 	}
 
 	public String getProjectURL(String framework, String pattern) {
 		final JsonNode projUrlsJsonNode = projectJsonHandler.getProjectUrlsNode();
-
-		if (projUrlsJsonNode.get(framework) == null) {
+		
+		JsonNode frameworkNode = projUrlsJsonNode.get(framework);
+		JsonNode patternNode = projUrlsJsonNode.get(framework).get(pattern);
+		
+		if (frameworkNode == null) {
 			throw new IllegalArgumentException(
 					"Invalid framework received: " + framework + "is not a valid framework.");
-		} else if (projUrlsJsonNode.get(framework).get(pattern) == null) {
+		} else if (patternNode == null) {
 			throw new IllegalArgumentException("Invalid pattern received: " + pattern + "is not a valid pattern.");
 		}
 
-		return projUrlsJsonNode.get(framework).get(pattern).asText();
+		return patternNode.asText();
 	}
 
 	public String createProject(String repoUrl, String projName, String visibility,
