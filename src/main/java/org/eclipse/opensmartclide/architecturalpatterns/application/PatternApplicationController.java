@@ -2,8 +2,8 @@ package org.eclipse.opensmartclide.architecturalpatterns.application;
 
 import org.eclipse.opensmartclide.architecturalpatterns.service.ArchitecturalPatternsJsonHandler;
 import java.lang.IllegalArgumentException;
-import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -12,7 +12,6 @@ import org.springframework.lang.Nullable;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,7 +24,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 @RestController
 public class PatternApplicationController {
 
-	final String importProjectURL = "https://api.dev.smartclide.eu/external-project-importer/importProject";
+	@Value("${IMPORT_PROJECT_URL}$")
+	private String importProjectURL;
+	
 	private final ArchitecturalPatternsJsonHandler projectJsonHandler;
 
 	public PatternApplicationController(final ArchitecturalPatternsJsonHandler jsonHandler) {
@@ -33,7 +34,6 @@ public class PatternApplicationController {
 	}
 
 	@PostMapping(value = "/application", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-
 	public String applyPattern(@RequestParam("framework") String framework, @RequestParam("pattern") String pattern,
 			@Nullable @RequestParam("name") String projName, @Nullable @RequestParam("visibility") String visibility,
 			@RequestHeader String gitLabServerURL, @RequestHeader String gitlabToken) {
@@ -44,10 +44,9 @@ public class PatternApplicationController {
 
 			if (repoUrl == null) {
 				throw new NullPointerException("Repository URL is not found.");
-			} else {
-				
+			} else 	
 				return createProject(repoUrl, projName, visibility,gitLabServerURL,gitlabToken);
-			}
+
 		} catch (IllegalArgumentException e) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Expected a git-based URL", e);
 		}
@@ -79,7 +78,7 @@ public class PatternApplicationController {
 		if (visibility != null)
 			parameters.add("visibility", visibility);
 
-		UriComponentsBuilder uriComponentsBuilder = UriComponentsBuilder.fromHttpUrl(repoUrl).queryParams(parameters);
+		UriComponentsBuilder uriComponentsBuilder = UriComponentsBuilder.fromHttpUrl(importProjectURL).queryParams(parameters);
 		String url = uriComponentsBuilder.build().encode().toUriString();
 
 		// Setting headers
@@ -90,10 +89,14 @@ public class PatternApplicationController {
 		// Creating POST request query
 		HttpEntity<String> request = new HttpEntity<>(url, headers);
 		
+		try {
 		// Make POST request to external project importer
 		RestTemplate restTemplate = new RestTemplate();
 		String response = restTemplate.postForObject(importProjectURL, request, String.class);
 
 		return response;
+		} catch (IllegalArgumentException e) {
+			throw new IllegalArgumentException("Invalid URL: " + url + "is not a valid url.");
+		}
 	}
 }
