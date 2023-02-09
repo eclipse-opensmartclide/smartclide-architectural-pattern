@@ -26,14 +26,14 @@ public class PatternApplicationController {
 
 	@Value("${IMPORT_PROJECT_URL}$")
 	private String importProjectURL;
-	
+
 	private final ArchitecturalPatternsJsonHandler projectJsonHandler;
 
 	public PatternApplicationController(final ArchitecturalPatternsJsonHandler jsonHandler) {
 		this.projectJsonHandler = jsonHandler;
 	}
 
-	@PostMapping(value = "/application", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "/application")
 	public String applyPattern(@RequestParam("framework") String framework, @RequestParam("pattern") String pattern,
 			@Nullable @RequestParam("name") String projName, @Nullable @RequestParam("visibility") String visibility,
 			@RequestHeader String gitLabServerURL, @RequestHeader String gitlabToken) {
@@ -44,20 +44,21 @@ public class PatternApplicationController {
 
 			if (repoUrl == null) {
 				throw new NullPointerException("Repository URL is not found.");
-			} else 	
-				return createProject(repoUrl, projName, visibility,gitLabServerURL,gitlabToken);
+			} else
+				return createProject(repoUrl, projName, visibility, gitLabServerURL, gitlabToken);
 
 		} catch (IllegalArgumentException e) {
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Problem with either target project repository or input parameters: " + e.getMessage(), e);
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+					"Problem with either target project repository or input parameters: " + e.getMessage(), e);
 		}
 	}
 
 	public String getProjectURL(String framework, String pattern) {
 		final JsonNode projUrlsJsonNode = projectJsonHandler.getProjectUrlsNode();
-		
+
 		JsonNode frameworkNode = projUrlsJsonNode.get(framework);
 		JsonNode patternNode = projUrlsJsonNode.get(framework).get(pattern);
-		
+
 		if (frameworkNode == null) {
 			throw new IllegalArgumentException(
 					"Invalid framework received: " + framework + "is not a valid framework.");
@@ -68,8 +69,8 @@ public class PatternApplicationController {
 		return patternNode.asText();
 	}
 
-	public String createProject(String repoUrl, String projName, String visibility,
-			String gitLabServerURL, String gitlabToken) {
+	public String createProject(String repoUrl, String projName, String visibility, String gitLabServerURL,
+			String gitlabToken) {
 
 		// Creating URL with parameters
 		MultiValueMap<String, String> parameters = new LinkedMultiValueMap<String, String>();
@@ -81,7 +82,8 @@ public class PatternApplicationController {
 		if (visibility != null)
 			parameters.add("visibility", visibility);
 
-		UriComponentsBuilder uriComponentsBuilder = UriComponentsBuilder.fromHttpUrl(importProjectURL).queryParams(parameters);
+		UriComponentsBuilder uriComponentsBuilder = UriComponentsBuilder.fromHttpUrl(importProjectURL)
+				.queryParams(parameters);
 		String url = uriComponentsBuilder.build().encode().toUriString();
 
 		// Setting headers
@@ -91,13 +93,13 @@ public class PatternApplicationController {
 
 		// Creating POST request query
 		HttpEntity<String> request = new HttpEntity<>(url, headers);
-		
-		try {
-		// Make POST request to external project importer
-		RestTemplate restTemplate = new RestTemplate();
-		String response = restTemplate.postForObject(importProjectURL, request, String.class);
 
-		return response;
+		try {
+			// Make POST request to external project importer
+			RestTemplate restTemplate = new RestTemplate();
+			String response = restTemplate.postForObject(importProjectURL, request, String.class);
+
+			return response;
 		} catch (IllegalArgumentException e) {
 			throw new IllegalArgumentException("Invalid URL: " + url + "is not a valid url.");
 		}
