@@ -1,13 +1,14 @@
 package org.eclipse.opensmartclide.architecturalpatterns.application;
 
 import org.eclipse.opensmartclide.architecturalpatterns.service.ArchitecturalPatternsJsonHandler;
-import java.lang.IllegalArgumentException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.lang.IllegalArgumentException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.lang.Nullable;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -15,22 +16,24 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.util.UriComponentsBuilder;
-
 import com.fasterxml.jackson.databind.JsonNode;
 
 @RestController
 public class PatternApplicationController {
 
-	@Value("${IMPORT_PROJECT_URL}$")
+	@Value("${IMPORT_PROJECT_URL}")
 	private String importProjectURL;
+	private static final Logger logger = LoggerFactory.getLogger(PatternApplicationController.class);
 
 	private final ArchitecturalPatternsJsonHandler projectJsonHandler;
 
 	public PatternApplicationController(final ArchitecturalPatternsJsonHandler jsonHandler) {
 		this.projectJsonHandler = jsonHandler;
+
 	}
 
 	@PostMapping(value = "/application")
@@ -44,12 +47,16 @@ public class PatternApplicationController {
 
 			if (repoUrl == null) {
 				throw new NullPointerException("Repository URL is not found.");
-			} else
-				return createProject(repoUrl, projName, visibility, gitLabServerURL, gitlabToken);
+			}
+			String response = createProject(repoUrl, projName, visibility, gitLabServerURL, gitlabToken);
+			logger.info("Pattern application succeded!");
+
+			return response;
 
 		} catch (IllegalArgumentException e) {
+			logger.error("Exception during pattern application.", e);
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
-					"Problem with either target project repository or input parameters: " + e.getMessage(), e);
+					"Problem with either project template resource or input parameters: " + e.getMessage());
 		}
 	}
 
@@ -57,13 +64,16 @@ public class PatternApplicationController {
 		final JsonNode projUrlsJsonNode = projectJsonHandler.getProjectUrlsNode();
 
 		JsonNode frameworkNode = projUrlsJsonNode.get(framework);
-		JsonNode patternNode = projUrlsJsonNode.get(framework).get(pattern);
 
 		if (frameworkNode == null) {
 			throw new IllegalArgumentException(
-					"Invalid framework received: " + framework + "is not a valid framework.");
-		} else if (patternNode == null) {
-			throw new IllegalArgumentException("Invalid pattern received: " + pattern + "is not a valid pattern.");
+					"Invalid framework received: " + framework + " is not a valid framework.");
+		}
+
+		JsonNode patternNode = frameworkNode.get(pattern);
+
+		if (frameworkNode.get(pattern) == null) {
+			throw new IllegalArgumentException("Invalid pattern received: " + pattern + " is not a valid pattern.");
 		}
 
 		return patternNode.asText();
@@ -76,11 +86,13 @@ public class PatternApplicationController {
 		MultiValueMap<String, String> parameters = new LinkedMultiValueMap<String, String>();
 		parameters.add("repoUrl", repoUrl);
 
-		if (projName != null)
+		if (projName != null) {
 			parameters.add("name", projName);
+		}
 
-		if (visibility != null)
+		if (visibility != null) {
 			parameters.add("visibility", visibility);
+		}
 
 		UriComponentsBuilder uriComponentsBuilder = UriComponentsBuilder.fromHttpUrl(importProjectURL)
 				.queryParams(parameters);
@@ -95,13 +107,14 @@ public class PatternApplicationController {
 		HttpEntity<String> request = new HttpEntity<>(url, headers);
 
 		try {
+
 			// Make POST request to external project importer
 			RestTemplate restTemplate = new RestTemplate();
-			String response = restTemplate.postForObject(importProjectURL, request, String.class);
+			return restTemplate.postForObject(importProjectURL, request, String.class);
 
-			return response;
-		} catch (IllegalArgumentException e) {
-			throw new IllegalArgumentException("Invalid URL: " + url + "is not a valid url.");
+		} catch (RestClientException e) {
+			logger.error("Problem encoutered while sending POST request: " + url);
+			throw new IllegalStateException(e.getMessage());
 		}
 	}
 }
