@@ -83,7 +83,7 @@ public class PatternApplicationController {
 			String gitlabToken) {
 
 		// Creating URL with parameters
-		MultiValueMap<String, String> parameters = new LinkedMultiValueMap<String, String>();
+		MultiValueMap<String, String> parameters = new LinkedMultiValueMap<>();
 		parameters.add("repoUrl", repoUrl);
 
 		if (projName != null) {
