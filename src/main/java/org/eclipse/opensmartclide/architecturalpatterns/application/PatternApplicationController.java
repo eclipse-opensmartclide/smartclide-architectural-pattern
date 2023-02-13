@@ -113,7 +113,7 @@ public class PatternApplicationController {
 			return restTemplate.postForObject(importProjectURL, request, String.class);
 
 		} catch (RestClientException e) {
-			logger.error("Problem encoutered while sending POST request: " + url);
+			logger.error("Problem encountered while sending POST request: " + url);
 			throw new IllegalStateException(e.getMessage());
 		}
 	}
