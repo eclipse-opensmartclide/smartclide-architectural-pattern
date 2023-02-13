@@ -49,7 +49,7 @@ public class PatternApplicationController {
 				throw new NullPointerException("Repository URL is not found.");
 			}
 			String response = createProject(repoUrl, projName, visibility, gitLabServerURL, gitlabToken);
-			logger.info("Pattern application succeded!");
+			logger.info("Pattern application succeeded!");
 
 			return response;
 
