@@ -1,15 +1,15 @@
 package org.eclipse.opensmartclide.architecturalpatterns.selection;
 
-import org.eclipse.opensmartclide.architecturalpatterns.service.SurveyJsonHandler;
+import org.eclipse.opensmartclide.architecturalpatterns.service.ArchitecturalPatternsJsonHandler;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class SurveyController {
-    private final SurveyJsonHandler surveyJsonHandler;
+    private final ArchitecturalPatternsJsonHandler surveyJsonHandler;
 
-    public SurveyController(final SurveyJsonHandler surveyJsonHandler) {
+    public SurveyController(final ArchitecturalPatternsJsonHandler surveyJsonHandler) {
         this.surveyJsonHandler = surveyJsonHandler;
     }
 

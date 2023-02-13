@@ -1,22 +1,21 @@
 package org.eclipse.opensmartclide.architecturalpatterns.selection;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import org.eclipse.opensmartclide.architecturalpatterns.service.SurveyJsonHandler;
+import org.eclipse.opensmartclide.architecturalpatterns.service.ArchitecturalPatternsJsonHandler;
 import org.eclipse.opensmartclide.architecturalpatterns.supportedpatterns.ArchitecturalPatterns;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @RestController
 public class PatternSelectionController {
-    private final SurveyJsonHandler surveyJsonHandler;
+    private final ArchitecturalPatternsJsonHandler surveyJsonHandler;
 
-    public PatternSelectionController(final SurveyJsonHandler surveyJsonHandler) {
+    public PatternSelectionController(final ArchitecturalPatternsJsonHandler surveyJsonHandler) {
         this.surveyJsonHandler = surveyJsonHandler;
     }
 

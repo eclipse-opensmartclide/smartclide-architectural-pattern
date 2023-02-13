@@ -2,7 +2,10 @@
 GET http://localhost:8080/supported-patterns
 
 ###
-GET http://localhost:8080/application
+POST http://localhost:8080/application?framework=Python&pattern=Layered&name=LayeredTestProject&visibility=2
+Content-Type: application/json
+gitLabServerURL: https://gitlab.com
+gitlabToken: <gitLabToken>
 
 ###
 GET http://localhost:8080/survey
