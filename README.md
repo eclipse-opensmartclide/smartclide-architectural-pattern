@@ -70,7 +70,7 @@ A JSON object of a list of patterns with their evaluation scores in terms of per
 
 ## Application
 
-Based on the query parameters described below, it chooses an appropriate Github project template based and calls the [external project importer](https://github.com/eclipse-opensmartclide/smartclide-external-project-importer/blob/main/src/main/java/smartclide/projectimporter/controller/ProjectImportController.java) to create the project based on the template chosen.
+Based on the query parameters described below, it chooses an appropriate GitHub project template based and calls the [external project importer](https://github.com/eclipse-opensmartclide/smartclide-external-project-importer/blob/main/src/main/java/smartclide/projectimporter/controller/ProjectImportController.java) to create the project based on the template chosen.
 
 ### Request
 
