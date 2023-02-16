@@ -29,7 +29,6 @@ public class PatternSelectionController {
 		final JsonNode surveyEvaluationNode = surveyJsonHandler.getSurveyEvaluationNode();
 		final HashMap<ArchitecturalPatterns, Integer> patternValues = initializePatternValues();
 		int totalValue = 0;
-		double percentage = 0;
 
 		// Iterate over survey question IDs
 		for (String id : input) {
@@ -48,13 +47,11 @@ public class PatternSelectionController {
 			}
 		}
 
-		HashMap<ArchitecturalPatterns, Integer> patternPercentages = initializePatternValues();
 		for (Map.Entry<ArchitecturalPatterns, Integer> entry : patternValues.entrySet()) {
-			Integer value = entry.getValue();
-			percentage = (value * 100) / (double) totalValue;
-			patternPercentages.put(entry.getKey(),  Double.valueOf(percentage).intValue());
+			double percentage = (entry.getValue() * 100) / (double) totalValue;
+			patternValues.put(entry.getKey(), (int) percentage);
 		}
-		return patternPercentages;
+		return patternValues;
 	}
 
 	private HashMap<ArchitecturalPatterns, Integer> initializePatternValues() {
