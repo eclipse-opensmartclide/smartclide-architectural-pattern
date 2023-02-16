@@ -6,7 +6,7 @@ The REST API offers the following endpoints:
 
 ## Supported Patterns
 
-Lists the names of achitectural patterns that are supported by this API.
+Lists the names of architectural patterns that are supported by this API.
 
 ### Request
 
