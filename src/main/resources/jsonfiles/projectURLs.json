@@ -1,5 +1,5 @@
 {
-  "Java with Spring Boot and MySQL": {
+  "Java_with_Spring_Boot_and_MySQL": {
     "Layered": "https://github.com/che-samples/web-java-spring-boot",
     "Event-driven": "https://github.com/spring-projects/spring-kafka",
     "Microkernel": "https://github.com/devexpress-albania/microkernel",
