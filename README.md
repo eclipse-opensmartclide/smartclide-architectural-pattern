@@ -101,7 +101,7 @@ Description: This is pattern name that is selected by the user. The endpoint exp
 **name**
 Type: String
 
-Description: This is project name that the used has entered within the Service Creation flow in Step 2 Service Details/Name. It is an optional parameter.
+Description: This is project name that the user has entered within the Service Creation flow in Step 2 Service Details/Name. It is an optional parameter.
 When not provided, by default an appropriate project name is created based on the project template used.
 
 **visibility** 
