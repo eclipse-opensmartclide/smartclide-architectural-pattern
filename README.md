@@ -6,7 +6,7 @@ The REST API offers the following endpoints:
 
 ## Supported Patterns
 
-List the names of achitectural patterns that are supported by this API
+Lists the names of achitectural patterns that are supported by this API.
 
 ### Request
 
@@ -27,7 +27,7 @@ Responses (application/json)
 
 ## Survey
 
-Get the JSON object that contains the survey content
+Gets the JSON object that contains the survey content.
 
 ### Request
 
@@ -60,15 +60,17 @@ Responses (application/json)
 A JSON object of a list of patterns with their evaluation scores in terms of percentages corresponding to their calculated ranking.
 
 {
-    "EVENT_DRIVEN": 13, 
-    "LAYERED": 6,
-    "MICROKERNEL": 10,
-    "MICROSERVICES": 31,
+    "EVENT_DRIVEN": 17, 
+    "LAYERED": 38,
+    "MICROKERNEL": 8,
+    "MICROSERVICES": 14,
     "SERVICE_ORIENTED": 12,
-    "SPACE_BASED": 12
+    "SPACE_BASED": 18
 }
 
 ## Application
+
+Based on the query parameters described below, it chooses an appropriate Github project template based and calls the [external project importer](https://github.com/eclipse-opensmartclide/smartclide-external-project-importer/blob/main/src/main/java/smartclide/projectimporter/controller/ProjectImportController.java) to create the project based on the template chosen.
 
 ### Request
 
@@ -88,7 +90,7 @@ Description: This is the framework name that the user has selected within the Se
 **pattern**
 Type: String
 
-Description: This is pattern name that is selected by the user. The endpoint expects one of the six following valid arguments:
+Description: This is the pattern name that is selected by the user. The endpoint expects one of the six following valid parameters:
 
 - Event-driven
 - Layered
@@ -100,13 +102,13 @@ Description: This is pattern name that is selected by the user. The endpoint exp
 **name**
 Type: String
 
-Description: This is project name that the user has entered within the Service Creation flow in Step 2 Service Details/Name. It is an optional parameter.
-When not provided, by default an appropriate project name is created based on the project template used.
+Description: This is the project name that the user has entered within the Service Creation flow in Step 2 Service Details/Name. It is an optional parameter.
+When not provided, an appropriate project name is created by default based on the project template used.
 
 **visibility** 
 Type: String
 
-Description: This is visibility option that the user has selected within the Service Creation flow in Step 2 Service Details/Visibility. It is an optional parameter. Valid parameters are:
+Description: This is the visibility option that the user has selected within the Service Creation flow in Step 2 Service Details/Visibility. It is an optional parameter. Valid parameters are:
 
 - 0 (meaning that the project visibility is public)
 - 2 (meaning that the project visibility is private)
