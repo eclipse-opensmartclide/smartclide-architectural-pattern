@@ -126,7 +126,7 @@ https://api.dev.smartclide.eu/architectural-patterns/application?framework=Pytho
 ### Response 
 
 HTTP response codes:
-- 200 OK (upon succussful creation of the Github project)
+- 200 OK (upon successful creation of the GitHub project)
 - 400 Bad Request
 - 401 Unauthorized
 - 500 Internal Server Error
