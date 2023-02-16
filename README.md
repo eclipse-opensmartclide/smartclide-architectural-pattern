@@ -37,8 +37,7 @@ GET https://api.dev.smartclide.eu/architectural-patterns/survey
 
 Responses (application/json)
 
-Please see 
-<a href="https://github.com/eclipse-opensmartclide/smartclide-architectural-pattern/blob/main/src/main/resources/jsonfiles/survey.json">file</a>.
+Please see [survey.json](src/main/resources/jsonfiles/survey.json).
 
 ## Evaluation
 
