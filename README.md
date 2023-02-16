@@ -5,6 +5,7 @@
 List the names of achitectural patterns that are supported by this API
 
 Responses (application/json)
+
 [
     "EVENT_DRIVEN",
     "LAYERED",
@@ -84,4 +85,8 @@ Description: This is visibility option that the used has selected within the Ser
 - gitLabServerURL, e.g., https://gitlab.dev.smartclide.eu
 - gitlabToken: <GITLAB_PAT>
 - Authorization:  Bearer <BEARER_TOKEN>
+
+Sample request URL:
+ 
+https://api.dev.smartclide.eu/architectural-patterns/application?framework=Python&pattern=Layered&name=testProject&visibility=2
 
