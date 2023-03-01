@@ -111,7 +111,12 @@ Example POST request: https://api.dev.smartclide.eu/architectural-patterns/appli
 
 ### Response 
 
-Content-Type: `text/plain`
+The template repository URL on GitHub, e.g., `https://github.com/che-samples/web-java-spring-boot`
 
-A repository URL on GitHub, e.g., `https://github.com/che-samples/web-java-spring-boot`
+Content-Type: `application/json`
 
+```json
+{
+    "templateRepositoryUrl": "https://github.com/che-samples/web-java-spring-boot"
+}
+```
