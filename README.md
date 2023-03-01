@@ -14,8 +14,9 @@ GET https://api.dev.smartclide.eu/architectural-patterns/supported-patterns
 
 ### Response
 
-Responses (application/json)
+Content-Type: `application/json`
 
+```json
 [
     "EVENT_DRIVEN",
     "LAYERED",
@@ -24,6 +25,7 @@ Responses (application/json)
     "SERVICE_ORIENTED",
     "SPACE_BASED"
 ]
+```
 
 ## Survey
 
@@ -35,7 +37,7 @@ GET https://api.dev.smartclide.eu/architectural-patterns/survey
 
 ### Response
 
-Responses (application/json)
+Content-Type: `application/json`
 
 Please see [survey.json](src/main/resources/jsonfiles/survey.json).
 
@@ -49,16 +51,21 @@ POST https://api.dev.smartclide.eu/architectural-patterns/evaluation
 
 Body: required
 
+Content-Type: `application/json`
+
 Example value:
 
+```json
 ["Q1_1","Q2_1","Q2_2","Q3_3","Q3_4","Q4_1","Q4_2","Q5_3"]
+```
  
 ### Response
 
-Responses (application/json) 
+Content-Type: `application/json`
 
 A JSON object of a list of patterns with their evaluation scores in terms of percentages corresponding to their calculated ranking.
 
+```json
 {
     "EVENT_DRIVEN": 16, 
     "LAYERED": 35,
@@ -67,6 +74,7 @@ A JSON object of a list of patterns with their evaluation scores in terms of per
     "SERVICE_ORIENTED": 11,
     "SPACE_BASED": 17
 }
+```
 
 ## Application
 
@@ -103,4 +111,7 @@ Example POST request: https://api.dev.smartclide.eu/architectural-patterns/appli
 
 ### Response 
 
-A repository URL on GitHub, e.g., https://github.com/che-samples/web-java-spring-boot
+Content-Type: `text/plain`
+
+A repository URL on GitHub, e.g., `https://github.com/che-samples/web-java-spring-boot`
+
