@@ -7,7 +7,7 @@
     "Service-oriented": "https://github.com/horozal/java-spring-boot-mysql",
     "Space-based": "https://github.com/horozal/java-spring-boot-mysql"
   },
-  "Node.js": {
+  "Nodejs": {
     "Layered": "https://github.com/horozal/layered-architecture-nodejs",
     "Event-driven":"https://github.com/horozal/nodejs-template",
     "Microkernel": "https://github.com/horozal/nodejs-template",
