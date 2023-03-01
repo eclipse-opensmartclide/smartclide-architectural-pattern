@@ -1,26 +1,26 @@
 {
   "Java_with_Spring_Boot_and_MySQL": {
-    "Layered": "https://github.com/horozal/layered-architecture-java-spring-boot-mysql",
-    "Event-driven": "https://github.com/horozal/event-driven-java-spring-boot-mysql",
-    "Microkernel": "https://github.com/horozal/microkernel-spring-boot-mysql",
-    "Microservices": "https://github.com/horozal/microservices-java-spring-boot-mysql",
-    "Service-oriented": "https://github.com/horozal/java-spring-boot-mysql",
-    "Space-based": "https://github.com/horozal/java-spring-boot-mysql"
+    "LAYERED": "https://github.com/horozal/layered-architecture-java-spring-boot-mysql",
+    "EVENT_DRIVEN": "https://github.com/horozal/event-driven-java-spring-boot-mysql",
+    "MICROKERNEL": "https://github.com/horozal/microkernel-spring-boot-mysql",
+    "MICROSERVICES": "https://github.com/horozal/microservices-java-spring-boot-mysql",
+    "SERVICE_ORIENTED": "https://github.com/horozal/java-spring-boot-mysql",
+    "SPACE_BASED": "https://github.com/horozal/java-spring-boot-mysql"
   },
   "Nodejs": {
-    "Layered": "https://github.com/horozal/layered-architecture-nodejs",
-    "Event-driven":"https://github.com/horozal/nodejs-template",
-    "Microkernel": "https://github.com/horozal/nodejs-template",
-    "Microservices": "https://github.com/horozal/nodejs-template",
-    "Service-oriented": "https://github.com/horozal/nodejs-template",
-    "Space-based": "https://github.com/horozal/nodejs-template"
+    "LAYERED": "https://github.com/horozal/layered-architecture-nodejs",
+    "EVENT_DRIVEN":"https://github.com/horozal/nodejs-template",
+    "MICROKERNEL": "https://github.com/horozal/nodejs-template",
+    "MICROSERVICES": "https://github.com/horozal/nodejs-template",
+    "SERVICE_ORIENTED": "https://github.com/horozal/nodejs-template",
+    "SPACE_BASED": "https://github.com/horozal/nodejs-template"
   },
   "Python": {
-    "Layered": "https://github.com/horozal/layered-architecture-python",
-    "Event-driven": "https://github.com/horozal/python-template",
-    "Microkernel": "https://github.com/horozal/python-template",
-    "Microservices": "https://github.com/horozal/python-template",
-    "Service-oriented": "https://github.com/horozal/python-template",
-    "Space-based": "https://github.com/horozal/python-template"
+    "LAYERED": "https://github.com/horozal/layered-architecture-python",
+    "EVENT_DRIVEN": "https://github.com/horozal/python-template",
+    "MICROKERNEL": "https://github.com/horozal/python-template",
+    "MICROSERVICES": "https://github.com/horozal/python-template",
+    "SERVICE_ORIENTED": "https://github.com/horozal/python-template",
+    "SPACE_BASED": "https://github.com/horozal/python-template"
   }
 }
