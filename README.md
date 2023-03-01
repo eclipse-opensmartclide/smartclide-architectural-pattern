@@ -99,6 +99,8 @@ Description: This is the pattern name that is selected by the user. The endpoint
 - Service-oriented
 - Space-based
 
+Example POST request: https://api.dev.smartclide.eu/architectural-patterns/application?framework=Nodejs&pattern=Event-driven
+
 ### Response 
 
 A repository URL on GitHub, e.g., https://github.com/che-samples/web-java-spring-boot
