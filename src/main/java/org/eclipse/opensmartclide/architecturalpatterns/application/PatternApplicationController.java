@@ -5,11 +5,13 @@ import org.eclipse.opensmartclide.architecturalpatterns.service.ArchitecturalPat
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.Map;
 
 @RestController
 public class PatternApplicationController {
@@ -21,15 +23,15 @@ public class PatternApplicationController {
         this.projectJsonHandler = jsonHandler;
     }
 
-    @PostMapping(value = "/application")
-    public String applyPattern(@RequestParam("framework") String framework,
-                               @RequestParam("pattern") String pattern) {
+    @PostMapping(value = "/application", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Map<String, String> applyPattern(@RequestParam("framework") String framework,
+                                            @RequestParam("pattern") String pattern) {
         try {
             String repoUrl = getProjectURL(framework, pattern);
             if (repoUrl == null) {
                 throw new NullPointerException("Repository URL is not found.");
             }
-            return repoUrl;
+            return Map.of("templateRepositoryUrl", repoUrl);
         } catch (Exception e) {
             logger.error("Exception during pattern application.", e);
             throw new ResponseStatusException(
