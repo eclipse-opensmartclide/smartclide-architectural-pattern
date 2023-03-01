@@ -92,12 +92,12 @@ Type: String
 
 Description: This is the pattern name that is selected by the user. The endpoint expects one of the six following valid parameters:
 
-- Event-driven
-- Layered
-- Microkernel
-- Microservices
-- Service-oriented
-- Space-based
+- EVENT_DRIVEN
+- LAYERED
+- MICROKERNEL
+- MICROSERVICES
+- SERVICE_ORIENTED 
+- SPACE_BASED
 
 Example POST request: https://api.dev.smartclide.eu/architectural-patterns/application?framework=Nodejs&pattern=Event-driven
 
