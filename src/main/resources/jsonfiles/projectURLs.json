@@ -1,26 +1,26 @@
 {
   "Java_with_Spring_Boot_and_MySQL": {
-    "Layered": "https://github.com/che-samples/web-java-spring-boot",
-    "Event-driven": "https://github.com/spring-projects/spring-kafka",
-    "Microkernel": "https://github.com/devexpress-albania/microkernel",
-    "Microservices": "https://github.com/che-samples/web-java-spring-boot",
-    "Service-oriented": "https://github.com/che-samples/web-java-spring-boot",
-    "Space-based": "https://github.com/che-samples/web-java-spring-boot"
+    "Layered": "https://github.com/horozal/layered-architecture-java-spring-boot-mysql",
+    "Event-driven": "https://github.com/horozal/event-driven-java-spring-boot-mysql",
+    "Microkernel": "https://github.com/horozal/microkernel-spring-boot-mysql",
+    "Microservices": "https://github.com/horozal/microservices-java-spring-boot-mysql",
+    "Service-oriented": "https://github.com/horozal/java-spring-boot-mysql",
+    "Space-based": "https://github.com/horozal/java-spring-boot-mysql"
   },
   "Node.js": {
-    "Layered": "https://github.com/che-samples/web-nodejs-sample",
-    "Event-driven":"https://github.com/che-samples/web-nodejs-sample",
-    "Microkernel": "https://github.com/rse/microkernel",
-    "Microservices": "https://github.com/che-samples/web-nodejs-sample",
-    "Service-oriented": "https://github.com/che-samples/web-nodejs-sample",
-    "Space-based": "https://github.com/che-samples/web-nodejs-sample"
+    "Layered": "https://github.com/horozal/layered-architecture-nodejs",
+    "Event-driven":"https://github.com/horozal/nodejs-template",
+    "Microkernel": "https://github.com/horozal/nodejs-template",
+    "Microservices": "https://github.com/horozal/nodejs-template",
+    "Service-oriented": "https://github.com/horozal/nodejs-template",
+    "Space-based": "https://github.com/horozal/nodejs-template"
   },
   "Python": {
-    "Layered": "https://github.com/che-samples/python-hello-world",
-    "Event-driven": "https://github.com/che-samples/python-hello-world",
-    "Microkernel": "https://github.com/che-samples/python-hello-world",
-    "Microservices": "https://github.com/che-samples/python-hello-world",
-    "Service-oriented": "https://github.com/che-samples/python-hello-world",
-    "Space-based": "https://github.com/che-samples/python-hello-world"
+    "Layered": "https://github.com/horozal/layered-architecture-python",
+    "Event-driven": "https://github.com/horozal/python-template",
+    "Microkernel": "https://github.com/horozal/python-template",
+    "Microservices": "https://github.com/horozal/python-template",
+    "Service-oriented": "https://github.com/horozal/python-template",
+    "Space-based": "https://github.com/horozal/python-template"
   }
 }
