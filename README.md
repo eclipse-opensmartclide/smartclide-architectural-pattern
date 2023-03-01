@@ -107,7 +107,7 @@ Description: This is the pattern name that is selected by the user. The endpoint
 - SERVICE_ORIENTED 
 - SPACE_BASED
 
-Example POST request: https://api.dev.smartclide.eu/architectural-patterns/application?framework=Nodejs&pattern=Event-driven
+Example POST request: https://api.dev.smartclide.eu/architectural-patterns/application?framework=Nodejs&pattern=EVENT_DRIVEN
 
 ### Response 
 
