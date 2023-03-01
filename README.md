@@ -70,7 +70,7 @@ A JSON object of a list of patterns with their evaluation scores in terms of per
 
 ## Application
 
-Based on the query parameters described below, it chooses an appropriate GitHub project template.
+Based on the query parameters described below, it chooses an appropriate GitHub project template, and returns the URL to the template repository.
 
 ### Request
 
