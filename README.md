@@ -60,17 +60,17 @@ Responses (application/json)
 A JSON object of a list of patterns with their evaluation scores in terms of percentages corresponding to their calculated ranking.
 
 {
-    "EVENT_DRIVEN": 17, 
-    "LAYERED": 38,
-    "MICROKERNEL": 8,
-    "MICROSERVICES": 14,
-    "SERVICE_ORIENTED": 12,
-    "SPACE_BASED": 18
+    "EVENT_DRIVEN": 16, 
+    "LAYERED": 35,
+    "MICROKERNEL": 7,
+    "MICROSERVICES": 13,
+    "SERVICE_ORIENTED": 11,
+    "SPACE_BASED": 17
 }
 
 ## Application
 
-Based on the query parameters described below, it chooses an appropriate GitHub project template based and calls the [external project importer](https://github.com/eclipse-opensmartclide/smartclide-external-project-importer/blob/main/src/main/java/smartclide/projectimporter/controller/ProjectImportController.java) to create the project based on the template chosen.
+Based on the query parameters described below, it chooses an appropriate GitHub project template.
 
 ### Request
 
@@ -84,7 +84,7 @@ Type: String
 Description: This is the framework name that the user has selected within the Service Creation flow in Step 2 Service Details/Framework. The endpoint expects one of the following three valid parameters:
 
 - Java_with_Spring_Boot_and_MySQL
-- Node.js
+- Nodejs
 - Python
 
 **pattern**
@@ -99,34 +99,6 @@ Description: This is the pattern name that is selected by the user. The endpoint
 - Service-oriented
 - Space-based
 
-**name**
-Type: String
-
-Description: This is the project name that the user has entered within the Service Creation flow in Step 2 Service Details/Name. It is an optional parameter.
-When not provided, an appropriate project name is created by default based on the project template used.
-
-**visibility** 
-Type: String
-
-Description: This is the visibility option that the user has selected within the Service Creation flow in Step 2 Service Details/Visibility. It is an optional parameter. Valid parameters are:
-
-- 0 (meaning that the project visibility is public)
-- 2 (meaning that the project visibility is private)
-
-When not provided, the default value is 0. 
-
-**Headers:**
-- gitLabServerURL: the url of the Gitlab server where the new project will be created. E.g., https://gitlab.dev.smartclide.eu
-- gitlabToken: <GITLAB_PAT> (personal access token with write access)
-
-Sample request URL:
- 
-https://api.dev.smartclide.eu/architectural-patterns/application?framework=Python&pattern=Layered&name=testProject&visibility=2
-
 ### Response 
 
-HTTP response codes:
-- 200 OK (upon successful creation of the GitHub project)
-- 400 Bad Request
-- 401 Unauthorized
-- 500 Internal Server Error
+A repository URL on GitHub, e.g., https://github.com/che-samples/web-java-spring-boot
