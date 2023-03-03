@@ -18,7 +18,7 @@
   "Python": {
     "LAYERED": "https://github.com/horozal/layered-architecture-python",
     "EVENT_DRIVEN": "https://github.com/horozal/python-template",
-    "MICROKERNEL": "https://github.com/horozal/python-template",
+    "MICROKERNEL": "https://github.com/horozal/microkernel-python",
     "MICROSERVICES": "https://github.com/horozal/python-template",
     "SERVICE_ORIENTED": "https://github.com/horozal/python-template",
     "SPACE_BASED": "https://github.com/horozal/python-template"
