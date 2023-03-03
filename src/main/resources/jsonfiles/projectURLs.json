@@ -10,7 +10,7 @@
   "Nodejs": {
     "LAYERED": "https://github.com/horozal/layered-architecture-nodejs",
     "EVENT_DRIVEN":"https://github.com/horozal/nodejs-template",
-    "MICROKERNEL": "https://github.com/horozal/nodejs-template",
+    "MICROKERNEL": "https://github.com/horozal/microkernel-nodejs",
     "MICROSERVICES": "https://github.com/horozal/nodejs-template",
     "SERVICE_ORIENTED": "https://github.com/horozal/nodejs-template",
     "SPACE_BASED": "https://github.com/horozal/nodejs-template"
