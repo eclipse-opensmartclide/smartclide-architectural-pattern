@@ -9,18 +9,18 @@
   },
   "Nodejs": {
     "LAYERED": "https://github.com/horozal/layered-architecture-nodejs",
-    "EVENT_DRIVEN":"https://github.com/horozal/nodejs-template",
+    "EVENT_DRIVEN":"https://github.com/horozal/event-driven-nodejs",
     "MICROKERNEL": "https://github.com/horozal/microkernel-nodejs",
-    "MICROSERVICES": "https://github.com/horozal/nodejs-template",
-    "SERVICE_ORIENTED": "https://github.com/horozal/nodejs-template",
-    "SPACE_BASED": "https://github.com/horozal/nodejs-template"
+    "MICROSERVICES": "https://github.com/horozal/microservices-nodejs",
+    "SERVICE_ORIENTED": "https://github.com/horozal/service-oriented-nodejs",
+    "SPACE_BASED": "https://github.com/horozal/space-based-nodejs"
   },
   "Python": {
     "LAYERED": "https://github.com/horozal/layered-architecture-python",
-    "EVENT_DRIVEN": "https://github.com/horozal/python-template",
+    "EVENT_DRIVEN": "https://github.com/horozal/event-driven-python",
     "MICROKERNEL": "https://github.com/horozal/microkernel-python",
-    "MICROSERVICES": "https://github.com/horozal/python-template",
-    "SERVICE_ORIENTED": "https://github.com/horozal/python-template",
-    "SPACE_BASED": "https://github.com/horozal/python-template"
+    "MICROSERVICES": "https://github.com/horozal/microservices-python",
+    "SERVICE_ORIENTED": "https://github.com/horozal/service-oriented-python",
+    "SPACE_BASED": "https://github.com/horozal/space-based-python"
   }
 }
