@@ -212,7 +212,7 @@
         },
         {
           "id": "Q5_2",
-          "text": "Asynchronous communication / data flow (information can be exchanged in real time)"
+          "text": "Synchronous communication / data flow (information can be exchanged in real time)"
         },
         {
           "id": "Q5_3",
