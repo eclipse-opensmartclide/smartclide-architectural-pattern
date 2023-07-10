@@ -123,20 +123,8 @@ Content-Type: `application/json`
 
 The following repository templates are being currently used:
 
-For Java with Spring Boot and MySQL: [Event-driven](https://github.com/horozal/event-driven-java-spring-boot-mysql), [layered](https://github.com/horozal/layered-architecture-java-spring-boot-mysql), [microkernel](https://github.com/horozal/microkernel-spring-boot-mysql), [microservices](https://github.com/horozal/microservices-java-spring-boot-mysql), [service-oriented](https://github.com/horozal/service-oriented-java-spring-boot-mysql), [space-based](https://github.com/horozal/space-based-spring-boot-mysql)
+- For Java with Spring Boot and MySQL: [Event-driven](https://github.com/horozal/event-driven-java-spring-boot-mysql), [layered](https://github.com/horozal/layered-architecture-java-spring-boot-mysql), [microkernel](https://github.com/horozal/microkernel-spring-boot-mysql), [microservices](https://github.com/horozal/microservices-java-spring-boot-mysql), [service-oriented](https://github.com/horozal/service-oriented-java-spring-boot-mysql), [space-based](https://github.com/horozal/space-based-spring-boot-mysql)
 
-For Node.js
- - [Event-driven](https://github.com/horozal/event-driven-nodejs)
- - [Layered](https://github.com/horozal/layered-architecture-nodejs)
- - Microkernel: https://github.com/horozal/microkernel-nodejs
- - Microservices: https://github.com/horozal/microservices-nodejs
- - Service-oriented: https://github.com/horozal/service-oriented-nodejs
- - Space-based: https://github.com/horozal/space-based-nodejs
+- For Node.js: [Event-driven](https://github.com/horozal/event-driven-nodejs), [layered](https://github.com/horozal/layered-architecture-nodejs), [microkernel](https://github.com/horozal/microkernel-nodejs), [microservices](https://github.com/horozal/microservices-nodejs), [service-oriented](https://github.com/horozal/service-oriented-nodejs), [space-based](https://github.com/horozal/space-based-nodejs)
 
-For Python
- - Event-driven: https://github.com/horozal/event-driven-python
- - Layered: https://github.com/horozal/layered-architecture-python
- - Microkernel: https://github.com/horozal/microkernel-python
- - Microservices: https://github.com/horozal/microservices-python
- - Service-oriented: https://github.com/horozal/service-oriented-python
- - Space-based: https://github.com/horozal/space-based-python
+= For Python: [Event-driven](https://github.com/horozal/event-driven-python), [layered](https://github.com/horozal/layered-architecture-python), [microkernel](https://github.com/horozal/microkernel-python), [microservices](https://github.com/horozal/microservices-python), [service-oriented](https://github.com/horozal/service-oriented-python), [space-based](https://github.com/horozal/space-based-python)
