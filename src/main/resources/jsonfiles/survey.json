@@ -106,7 +106,7 @@
         },
         {
           "id": "Q2_8",
-          "text": "Application that has many shared components, particularly components across the enterprise"
+          "text": "Application with many shared components, particularly components across the enterprise"
         },
         {
           "id": "Q2_9",
@@ -114,10 +114,14 @@
         },
         {
           "id": "Q2_10",
+          "text": "Application with different platforms"
+        },
+		{
+          "id": "Q2_11",
           "text": "Application that requires strict standards of testability"
         },
         {
-          "id": "Q2_11",
+          "id": "Q2_12",
           "text": "None of the above"
         }
       ]
@@ -158,46 +162,30 @@
         },
         {
           "id": "Q4_2",
-          "text": "Easy to understand and modify the development"
+          "text": "Easy rewriting and updating parts of the application"
         },
         {
           "id": "Q4_3",
-          "text": "Easy to rewrite and update parts of the development"
-        },
-        {
-          "id": "Q4_4",
           "text": "Development teams that are spread out"
         },
         {
-          "id": "Q4_5",
-          "text": "Special functionality to address without rewriting the original application"
+          "id": "Q4_4",
+          "text": "Adding special functionality, modules or extensions without modifying the original application"
         },
         {
-          "id": "Q4_6",
+          "id": "Q4_5",
           "text": "High ease of deployment"
         },
         {
+          "id": "Q4_6",
+          "text": "Rapid, frequent and independent deployment"
+        },
+        {
           "id": "Q4_7",
-          "text": "Rapid and frequent development and deployment"
-        },
-        {
-          "id": "Q4_8",
-          "text": "Independently deployable"
-        },
-        {
-          "id": "Q4_9",
-          "text": "High speed with creating and deploying new applications"
-        },
-        {
-          "id": "Q4_10",
-          "text": "Add new modules without making changes to the existing system"
-        },
-        {
-          "id": "Q4_11",
           "text": "Quick response to a constantly changing environment"
         },
         {
-          "id": "Q4_12",
+          "id": "Q4_8",
           "text": "Reusability of integrations and component sharing"
         }
       ]
@@ -208,11 +196,11 @@
       "options": [
         {
           "id": "Q5_1",
-          "text": "Asynchronous communication / data flow (information can be exchanged independent of time)"
+          "text": "Asynchronous communication / data flow (interaction between components without strict requirement for immediate or synchronized responses)"
         },
         {
           "id": "Q5_2",
-          "text": "Synchronous communication / data flow (information can be exchanged in real time)"
+          "text": "Synchronous communication / data flow (information can only be exchanged in real time)"
         },
         {
           "id": "Q5_3",
@@ -232,11 +220,11 @@
         },
         {
           "id": "Q5_7",
-          "text": "Dynamic (system components and connections can be created and destroyed during runtimes)"
+          "text": "Dynamic composition (system components and connections can be created and destroyed during runtime)"
         },
         {
           "id": "Q5_8",
-          "text": "High volume data (size of the data sets to be processed larger than terabytes)"
+          "text": "High volume data (size of datasets to be processed are larger than terabytes)"
         }
       ]
     }

@@ -4,8 +4,8 @@
     "EVENT_DRIVEN": "https://github.com/horozal/event-driven-java-spring-boot-mysql",
     "MICROKERNEL": "https://github.com/horozal/microkernel-spring-boot-mysql",
     "MICROSERVICES": "https://github.com/horozal/microservices-java-spring-boot-mysql",
-    "SERVICE_ORIENTED": "https://github.com/horozal/java-spring-boot-mysql",
-    "SPACE_BASED": "https://github.com/horozal/java-spring-boot-mysql"
+    "SERVICE_ORIENTED": "https://github.com/horozal/service-oriented-java-spring-boot-mysql",
+    "SPACE_BASED": "https://github.com/horozal/space-based-spring-boot-mysql"
   },
   "Nodejs": {
     "LAYERED": "https://github.com/horozal/layered-architecture-nodejs",
