@@ -123,7 +123,7 @@ Content-Type: `application/json`
 
 The following repository templates are being currently used:
 
-- For Java with Spring Boot and MySQL
+For Java with Spring Boot and MySQL
  - Event-driven: https://github.com/horozal/event-driven-java-spring-boot-mysql
  - Layered: https://github.com/horozal/layered-architecture-java-spring-boot-mysql
  - Microkernel: https://github.com/horozal/microkernel-spring-boot-mysql
@@ -131,7 +131,7 @@ The following repository templates are being currently used:
  - Service-oriented: https://github.com/horozal/service-oriented-java-spring-boot-mysql
  - Space-based: https://github.com/horozal/space-based-spring-boot-mysql
 
-- For Node.js
+For Node.js
  - Event-driven: https://github.com/horozal/event-driven-nodejs
  - Layered: https://github.com/horozal/layered-architecture-nodejs
  - Microkernel: https://github.com/horozal/microkernel-nodejs
@@ -139,7 +139,7 @@ The following repository templates are being currently used:
  - Service-oriented: https://github.com/horozal/service-oriented-nodejs
  - Space-based: https://github.com/horozal/space-based-nodejs
 
-- For Python
+For Python
  - Event-driven: https://github.com/horozal/event-driven-python
  - Layered: https://github.com/horozal/layered-architecture-python
  - Microkernel: https://github.com/horozal/microkernel-python
