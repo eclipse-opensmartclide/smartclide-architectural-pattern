@@ -123,7 +123,7 @@ Content-Type: `application/json`
 
 The repository templates currently being in use are as follows:
 
-- For Java with Spring Boot and MySQL: [Event-driven](https://github.com/horozal/event-driven-java-spring-boot-mysql), [layered](https://github.com/horozal/layered-architecture-java-spring-boot-mysql), [microkernel](https://github.com/horozal/microkernel-spring-boot-mysql), [microservices](https://github.com/horozal/microservices-java-spring-boot-mysql), [service-oriented](https://github.com/horozal/service-oriented-java-spring-boot-mysql), [space-based](https://github.com/horozal/space-based-spring-boot-mysql)
+- For Java with Spring Boot and MySQL: [Event-driven](https://github.com/horozal/event-driven-java-spring-boot-mysql), [layered](https://github.com/horozal/layered-architecture-java-spring-boot-mysql), [microkernel](https://github.com/horozal/microkernel-java-spring-boot-mysql), [microservices](https://github.com/horozal/microservices-java-spring-boot-mysql), [service-oriented](https://github.com/horozal/service-oriented-java-spring-boot-mysql), [space-based](https://github.com/horozal/space-based-spring-boot-mysql)
 
 - For Node.js: [Event-driven](https://github.com/horozal/event-driven-nodejs), [layered](https://github.com/horozal/layered-architecture-nodejs), [microkernel](https://github.com/horozal/microkernel-nodejs), [microservices](https://github.com/horozal/microservices-nodejs), [service-oriented](https://github.com/horozal/service-oriented-nodejs), [space-based](https://github.com/horozal/space-based-nodejs)
 
