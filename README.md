@@ -132,8 +132,8 @@ For Java with Spring Boot and MySQL
  - Space-based: https://github.com/horozal/space-based-spring-boot-mysql
 
 For Node.js
- - Event-driven: https://github.com/horozal/event-driven-nodejs
- - Layered: https://github.com/horozal/layered-architecture-nodejs
+ - [Event-driven](https://github.com/horozal/event-driven-nodejs)
+ - [Layered](https://github.com/horozal/layered-architecture-nodejs)
  - Microkernel: https://github.com/horozal/microkernel-nodejs
  - Microservices: https://github.com/horozal/microservices-nodejs
  - Service-oriented: https://github.com/horozal/service-oriented-nodejs
