@@ -121,7 +121,7 @@ Content-Type: `application/json`
 }
 ```
 
-The repository templates currently being in use are as follows:
+## The repository templates currently being in use are as follows:
 
 - For Java with Spring Boot and MySQL:
   - [event-driven](https://github.com/horozal/event-driven-java-spring-boot-mysql)
