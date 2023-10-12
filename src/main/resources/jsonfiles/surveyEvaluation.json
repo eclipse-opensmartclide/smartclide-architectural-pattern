@@ -1,54 +1,54 @@
 {
   "Q1_1": {
-    "LAYERED": 6,
-    "EVENT_DRIVEN": 3,
+    "LAYERED": 5,
+    "EVENT_DRIVEN": 5,
     "MICROKERNEL": 0,
-    "MICROSERVICES": 2,
-    "SERVICE_ORIENTED": 4,
-    "SPACE_BASED": 3
+    "MICROSERVICES": 5,
+    "SERVICE_ORIENTED": 5,
+    "SPACE_BASED": 5
   },
   "Q1_2": {
     "LAYERED": 0,
     "EVENT_DRIVEN": 0,
     "MICROKERNEL": 0,
-    "MICROSERVICES": 2,
-    "SERVICE_ORIENTED": 3,
-    "SPACE_BASED": 1
+    "MICROSERVICES": 5,
+    "SERVICE_ORIENTED": 5,
+    "SPACE_BASED": 5
   },
   "Q1_3": {
     "LAYERED": 0,
     "EVENT_DRIVEN": 0,
     "MICROKERNEL": 0,
-    "MICROSERVICES": 2,
-    "SERVICE_ORIENTED": 3,
-    "SPACE_BASED": 1
+    "MICROSERVICES": 5,
+    "SERVICE_ORIENTED": 5,
+    "SPACE_BASED": 0
   },
   "Q1_4": {
-    "LAYERED": 3,
+    "LAYERED": 5,
     "EVENT_DRIVEN": 5,
-    "MICROKERNEL": 1,
+    "MICROKERNEL": 5,
     "MICROSERVICES": 5,
-    "SERVICE_ORIENTED": 18,
-    "SPACE_BASED": 1
+    "SERVICE_ORIENTED": 5,
+    "SPACE_BASED": 5
   },
   "Q1_5": {
     "LAYERED": 0,
     "EVENT_DRIVEN": 0,
     "MICROKERNEL": 0,
-    "MICROSERVICES": 2,
-    "SERVICE_ORIENTED": 3,
+    "MICROSERVICES": 5,
+    "SERVICE_ORIENTED": 5,
     "SPACE_BASED": 0
   },
   "Q1_6": {
-    "LAYERED": 3,
+    "LAYERED": 5,
     "EVENT_DRIVEN": 0,
     "MICROKERNEL": 0,
-    "MICROSERVICES": 1,
-    "SERVICE_ORIENTED": 3,
-    "SPACE_BASED": 3
+    "MICROSERVICES": 5,
+    "SERVICE_ORIENTED": 5,
+    "SPACE_BASED": 5
   },
   "Q1_7": {
-    "LAYERED": 1,
+    "LAYERED": 5,
     "EVENT_DRIVEN": 0,
     "MICROKERNEL": 0,
     "MICROSERVICES": 0,
@@ -56,68 +56,68 @@
     "SPACE_BASED": 0
   },
   "Q1_8": {
-    "LAYERED": 2,
-    "EVENT_DRIVEN": 2,
-    "MICROKERNEL": 0,
-    "MICROSERVICES": 0,
+    "LAYERED": 5,
+    "EVENT_DRIVEN": 5,
+    "MICROKERNEL": 5,
+    "MICROSERVICES": 5,
     "SERVICE_ORIENTED": 0,
     "SPACE_BASED": 0
   },
   "Q1_9": {
-    "LAYERED": 2,
-    "EVENT_DRIVEN": 0,
+    "LAYERED": 5,
+    "EVENT_DRIVEN": 5,
     "MICROKERNEL": 0,
-    "MICROSERVICES": 0,
+    "MICROSERVICES": 5,
     "SERVICE_ORIENTED": 0,
     "SPACE_BASED": 0
   },
   "Q1_10": {
-    "LAYERED": 2,
-    "EVENT_DRIVEN": 0,
+    "LAYERED": 5,
+    "EVENT_DRIVEN": 5,
     "MICROKERNEL": 0,
-    "MICROSERVICES": 0,
-    "SERVICE_ORIENTED": 2,
+    "MICROSERVICES": 5,
+    "SERVICE_ORIENTED": 5,
     "SPACE_BASED": 0
   },
   "Q1_11": {
     "LAYERED": 0,
     "EVENT_DRIVEN": 0,
-    "MICROKERNEL": 2,
-    "MICROSERVICES": 0,
+    "MICROKERNEL": 5,
+    "MICROSERVICES": 5,
     "SERVICE_ORIENTED": 0,
     "SPACE_BASED": 0
   },
   "Q1_12": {
     "LAYERED": 0,
-    "EVENT_DRIVEN": 0,
+    "EVENT_DRIVEN": 5,
     "MICROKERNEL": 0,
-    "MICROSERVICES": 0,
-    "SERVICE_ORIENTED": 7,
+    "MICROSERVICES": 5,
+    "SERVICE_ORIENTED": 5,
     "SPACE_BASED": 0
   },
   "Q1_13": {
-    "LAYERED": 0,
-    "EVENT_DRIVEN": 0,
+    "LAYERED": 5,
+    "EVENT_DRIVEN": 5,
     "MICROKERNEL": 0,
-    "MICROSERVICES": 0,
-    "SERVICE_ORIENTED": 3,
-    "SPACE_BASED": 1
+    "MICROSERVICES": 5,
+    "SERVICE_ORIENTED": 5,
+    "SPACE_BASED": 0
   },
   "Q1_14": {
-    "LAYERED": 4,
-    "EVENT_DRIVEN": 2,
+    "LAYERED": 5,
+    "EVENT_DRIVEN": 5,
     "MICROKERNEL": 0,
     "MICROSERVICES": 0,
     "SERVICE_ORIENTED": 5,
     "SPACE_BASED": 0
   },
   "Q1_15": {
-    "LAYERED": 0,
-    "EVENT_DRIVEN": 0,
+    "LAYERED": 5,
+    "EVENT_DRIVEN": 5,
     "MICROKERNEL": 0,
-    "MICROSERVICES": 0,
-    "SERVICE_ORIENTED": 1,
-    "SPACE_BASED": 0
+    "MICROSERVICES": 5,
+    "SERVICE_ORIENTED": 5,
+    "SPACE_BASED": 5
   },
   "Q1_16": {
     "LAYERED": 0,
@@ -131,87 +131,87 @@
     "LAYERED": 0,
     "EVENT_DRIVEN": 0,
     "MICROKERNEL": 0,
-    "MICROSERVICES": 1,
-    "SERVICE_ORIENTED": 1,
+    "MICROSERVICES": 5,
+    "SERVICE_ORIENTED": 5,
     "SPACE_BASED": 0
   },
   "Q2_2": {
-    "LAYERED": 1,
-    "EVENT_DRIVEN": 1,
+    "LAYERED": 5,
+    "EVENT_DRIVEN": 5,
     "MICROKERNEL": 0,
-    "MICROSERVICES": 1,
-    "SERVICE_ORIENTED": 1,
-    "SPACE_BASED": 1
+    "MICROSERVICES": 5,
+    "SERVICE_ORIENTED": 5,
+    "SPACE_BASED": 5
   },
   "Q2_3": {
-    "LAYERED": 1,
-    "EVENT_DRIVEN": 1,
-    "MICROKERNEL": 1,
+    "LAYERED": 5,
+    "EVENT_DRIVEN": 5,
+    "MICROKERNEL": 5,
     "MICROSERVICES": 0,
     "SERVICE_ORIENTED": 0,
     "SPACE_BASED": 0
   },
   "Q2_4": {
-    "LAYERED": 1,
-    "EVENT_DRIVEN": 1,
+    "LAYERED": 5,
+    "EVENT_DRIVEN": 5,
     "MICROKERNEL": 0,
     "MICROSERVICES": 0,
     "SERVICE_ORIENTED": 0,
     "SPACE_BASED": 0
   },
   "Q2_5": {
-    "LAYERED": 1,
+    "LAYERED": 5,
     "EVENT_DRIVEN": 0,
     "MICROKERNEL": 0,
     "MICROSERVICES": 0,
-    "SERVICE_ORIENTED": 1,
+    "SERVICE_ORIENTED": 5,
     "SPACE_BASED": 0
   },
   "Q2_6": {
     "LAYERED": 0,
     "EVENT_DRIVEN": 0,
-    "MICROKERNEL": 1,
-    "MICROSERVICES": 1,
+    "MICROKERNEL": 5,
+    "MICROSERVICES": 5,
     "SERVICE_ORIENTED": 0,
     "SPACE_BASED": 0
   },
   "Q2_7": {
     "LAYERED": 0,
-    "EVENT_DRIVEN": 1,
+    "EVENT_DRIVEN": 5,
     "MICROKERNEL": 0,
-    "MICROSERVICES": 1,
-    "SERVICE_ORIENTED": 1,
+    "MICROSERVICES": 0,
+    "SERVICE_ORIENTED": 5,
     "SPACE_BASED": 0
   },
   "Q2_8": {
     "LAYERED": 0,
-    "EVENT_DRIVEN": 1,
+    "EVENT_DRIVEN": 5,
     "MICROKERNEL": 0,
-    "MICROSERVICES": 1,
-    "SERVICE_ORIENTED": 1,
+    "MICROSERVICES": 0,
+    "SERVICE_ORIENTED": 5,
     "SPACE_BASED": 0
   },
   "Q2_9": {
     "LAYERED": 0,
-    "EVENT_DRIVEN": 1,
+    "EVENT_DRIVEN": 5,
     "MICROKERNEL": 0,
-    "MICROSERVICES": 1,
+    "MICROSERVICES": 5,
     "SERVICE_ORIENTED": 0,
-    "SPACE_BASED": 1
+    "SPACE_BASED": 5
   },
   "Q2_10": {
     "LAYERED": 0,
     "EVENT_DRIVEN": 0,
     "MICROKERNEL": 0,
-    "MICROSERVICES": 1,
-    "SERVICE_ORIENTED": 1,
+    "MICROSERVICES": 5,
+    "SERVICE_ORIENTED": 5,
     "SPACE_BASED": 0
   },
   "Q2_11": {
-    "LAYERED": 1,
+    "LAYERED": 5,
     "EVENT_DRIVEN": 0,
     "MICROKERNEL": 0,
-    "MICROSERVICES": 0,
+    "MICROSERVICES": 5,
     "SERVICE_ORIENTED": 0,
     "SPACE_BASED": 0
   },
@@ -224,171 +224,171 @@
     "SPACE_BASED": 0
   },
   "Q3_1": {
-    "LAYERED": 10,
-    "EVENT_DRIVEN": 4,
-    "MICROKERNEL": 4,
-    "MICROSERVICES": 3,
-    "SERVICE_ORIENTED": 2,
-    "SPACE_BASED": 1
+    "LAYERED": 5,
+    "EVENT_DRIVEN": 5,
+    "MICROKERNEL": 5,
+    "MICROSERVICES": 5,
+    "SERVICE_ORIENTED": 5,
+    "SPACE_BASED": 5
   },
   "Q3_2": {
-    "LAYERED": 0,
-    "EVENT_DRIVEN": 1,
-    "MICROKERNEL": 0,
-    "MICROSERVICES": 3,
-    "SERVICE_ORIENTED": 2,
-    "SPACE_BASED": 2
+    "LAYERED": 2,
+    "EVENT_DRIVEN": 3,
+    "MICROKERNEL": 1,
+    "MICROSERVICES": 4,
+    "SERVICE_ORIENTED": 4,
+    "SPACE_BASED": 4
   },
   "Q3_3": {
-    "LAYERED": 16,
-    "EVENT_DRIVEN": 7,
-    "MICROKERNEL": 6,
-    "MICROSERVICES": 0,
-    "SERVICE_ORIENTED": 1,
-    "SPACE_BASED": 1
+    "LAYERED": 5,
+    "EVENT_DRIVEN": 4,
+    "MICROKERNEL": 5,
+    "MICROSERVICES": 1,
+    "SERVICE_ORIENTED": 5,
+    "SPACE_BASED": 5
   },
   "Q3_4": {
-    "LAYERED": 7,
-    "EVENT_DRIVEN": 1,
-    "MICROKERNEL": 6,
-    "MICROSERVICES": 3,
+    "LAYERED": 5,
+    "EVENT_DRIVEN": 5,
+    "MICROKERNEL": 5,
+    "MICROSERVICES": 5,
     "SERVICE_ORIENTED": 5,
-    "SPACE_BASED": 1
+    "SPACE_BASED": 4
   },
   "Q3_5": {
-    "LAYERED": 1,
-    "EVENT_DRIVEN": 0,
-    "MICROKERNEL": 0,
-    "MICROSERVICES": 0,
-    "SERVICE_ORIENTED": 0,
-    "SPACE_BASED": 0
+    "LAYERED": 5,
+    "EVENT_DRIVEN": 5,
+    "MICROKERNEL": 5,
+    "MICROSERVICES": 5,
+    "SERVICE_ORIENTED": 4,
+    "SPACE_BASED": 3
   },
   "Q4_1": {
-    "LAYERED": 1,
+    "LAYERED": 5,
     "EVENT_DRIVEN": 0,
     "MICROKERNEL": 0,
-    "MICROSERVICES": 1,
+    "MICROSERVICES": 5,
     "SERVICE_ORIENTED": 0,
     "SPACE_BASED": 0
   },
   "Q4_2": {
     "LAYERED": 0,
-    "EVENT_DRIVEN": 1,
-    "MICROKERNEL": 1,
-    "MICROSERVICES": 1,
-    "SERVICE_ORIENTED": 1,
+    "EVENT_DRIVEN": 0,
+    "MICROKERNEL": 5,
+    "MICROSERVICES": 5,
+    "SERVICE_ORIENTED": 0,
     "SPACE_BASED": 0
   },
   "Q4_3": {
     "LAYERED": 0,
-    "EVENT_DRIVEN": 1,
-    "MICROKERNEL": 1,
-    "MICROSERVICES": 1,
-    "SERVICE_ORIENTED": 1,
+    "EVENT_DRIVEN": 0,
+    "MICROKERNEL": 0,
+    "MICROSERVICES": 5,
+    "SERVICE_ORIENTED": 0,
     "SPACE_BASED": 0
   },
   "Q4_4": {
     "LAYERED": 0,
     "EVENT_DRIVEN": 0,
-    "MICROKERNEL": 1,
-    "MICROSERVICES": 1,
+    "MICROKERNEL": 5,
+    "MICROSERVICES": 5,
     "SERVICE_ORIENTED": 0,
     "SPACE_BASED": 0
   },
   "Q4_5": {
     "LAYERED": 0,
-    "EVENT_DRIVEN": 0,
-    "MICROKERNEL": 1,
-    "MICROSERVICES": 1,
+    "EVENT_DRIVEN": 5,
+    "MICROKERNEL": 5,
+    "MICROSERVICES": 5,
     "SERVICE_ORIENTED": 0,
-    "SPACE_BASED": 0
+    "SPACE_BASED": 5
   },
   "Q4_6": {
     "LAYERED": 0,
     "EVENT_DRIVEN": 0,
-    "MICROKERNEL": 1,
-    "MICROSERVICES": 0,
+    "MICROKERNEL": 0,
+    "MICROSERVICES": 5,
     "SERVICE_ORIENTED": 0,
     "SPACE_BASED": 0
   },
   "Q4_7": {
     "LAYERED": 0,
-    "EVENT_DRIVEN": 1,
-    "MICROKERNEL": 0,
-    "MICROSERVICES": 1,
+    "EVENT_DRIVEN": 0,
+    "MICROKERNEL": 5,
+    "MICROSERVICES": 5,
     "SERVICE_ORIENTED": 0,
-    "SPACE_BASED": 1
+    "SPACE_BASED": 5
   },
   "Q4_8": {
     "LAYERED": 0,
-    "EVENT_DRIVEN": 1,
+    "EVENT_DRIVEN": 0,
     "MICROKERNEL": 0,
-    "MICROSERVICES": 1,
-    "SERVICE_ORIENTED": 1,
+    "MICROSERVICES": 0,
+    "SERVICE_ORIENTED": 5,
     "SPACE_BASED": 0
   },
   "Q5_1": {
-    "LAYERED": 0,
-    "EVENT_DRIVEN": 1,
-    "MICROKERNEL": 0,
-    "MICROSERVICES": 1,
-    "SERVICE_ORIENTED": 0,
-    "SPACE_BASED": 0
+    "LAYERED": 5,
+    "EVENT_DRIVEN": 5,
+    "MICROKERNEL": 5,
+    "MICROSERVICES": 5,
+    "SERVICE_ORIENTED": 5,
+    "SPACE_BASED": 5
   },
   "Q5_2": {
-    "LAYERED": 0,
+    "LAYERED": 5,
     "EVENT_DRIVEN": 0,
-    "MICROKERNEL": 1,
-    "MICROSERVICES": 1,
-    "SERVICE_ORIENTED": 1,
+    "MICROKERNEL": 5,
+    "MICROSERVICES": 0,
+    "SERVICE_ORIENTED": 5,
     "SPACE_BASED": 0
   },
   "Q5_3": {
     "LAYERED": 0,
-    "EVENT_DRIVEN": 1,
-    "MICROKERNEL": 0,
-    "MICROSERVICES": 1,
-    "SERVICE_ORIENTED": 1,
+    "EVENT_DRIVEN": 5,
+    "MICROKERNEL": 5,
+    "MICROSERVICES": 5,
+    "SERVICE_ORIENTED": 5,
     "SPACE_BASED": 0
   },
   "Q5_4": {
     "LAYERED": 0,
     "EVENT_DRIVEN": 0,
     "MICROKERNEL": 0,
-    "MICROSERVICES": 1,
-    "SERVICE_ORIENTED": 1,
+    "MICROSERVICES": 5,
+    "SERVICE_ORIENTED": 5,
     "SPACE_BASED": 0
   },
   "Q5_5": {
-    "LAYERED": 1,
+    "LAYERED": 5,
     "EVENT_DRIVEN": 0,
-    "MICROKERNEL": 0,
-    "MICROSERVICES": 1,
-    "SERVICE_ORIENTED": 1,
+    "MICROKERNEL": 5,
+    "MICROSERVICES": 5,
+    "SERVICE_ORIENTED": 5,
     "SPACE_BASED": 0
   },
   "Q5_6": {
     "LAYERED": 0,
     "EVENT_DRIVEN": 0,
-    "MICROKERNEL": 1,
+    "MICROKERNEL": 5,
     "MICROSERVICES": 0,
     "SERVICE_ORIENTED": 0,
     "SPACE_BASED": 0
   },
   "Q5_7": {
     "LAYERED": 0,
-    "EVENT_DRIVEN": 1,
-    "MICROKERNEL": 1,
-    "MICROSERVICES": 1,
-    "SERVICE_ORIENTED": 0,
-    "SPACE_BASED": 1
+    "EVENT_DRIVEN": 5,
+    "MICROKERNEL": 5,
+    "MICROSERVICES": 5,
+    "SERVICE_ORIENTED": 5,
+    "SPACE_BASED": 0
   },
   "Q5_8": {
     "LAYERED": 0,
-    "EVENT_DRIVEN": 1,
+    "EVENT_DRIVEN": 0,
     "MICROKERNEL": 0,
-    "MICROSERVICES": 1,
+    "MICROSERVICES": 5,
     "SERVICE_ORIENTED": 0,
-    "SPACE_BASED": 1
+    "SPACE_BASED": 5
   }
 }

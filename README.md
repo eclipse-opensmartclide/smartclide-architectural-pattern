@@ -120,6 +120,11 @@ Content-Type: `application/json`
     "templateRepositoryUrl": "https://github.com/che-samples/web-java-spring-boot"
 }
 ```
+## Evaluation Values
+
+Evaluation values for the survey items can be found in the [doc](./doc) directory.
+
+## Repository Templates
 
 The repository templates currently being in use are as follows:
 
