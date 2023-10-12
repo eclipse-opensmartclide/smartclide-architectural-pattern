@@ -122,7 +122,7 @@ Content-Type: `application/json`
 ```
 ## Evaluation Values
 
-Evaluation values for the survey items can be found under the folder ```doc```.
+Evaluation values for the survey items can be found in the [doc](./doc) directory.
 
 ## Repository Templates
 
